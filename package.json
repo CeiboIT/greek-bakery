@@ -4,11 +4,11 @@
   "main": "server/app.js",
   "dependencies": {
     "body-parser": "~1.5.0",
+    "chai": "^3.2.0",
     "composable-middleware": "^0.3.0",
     "compression": "~1.0.1",
     "connect-mongo": "^0.8.1",
     "cookie-parser": "~1.0.1",
-    "csv-streamify": "^2.0.0",
     "ejs": "~0.8.4",
     "errorhandler": "~1.0.0",
     "express": "~4.9.0",
@@ -17,6 +17,7 @@
     "method-override": "~1.0.0",
     "mongoose": "~4.0.3",
     "morgan": "~1.0.0",
+    "node-csv-json": "^0.2.1",
     "serve-favicon": "~2.0.1"
   },
   "devDependencies": {
