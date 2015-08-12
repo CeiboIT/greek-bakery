@@ -6,3 +6,7 @@ client/bower_components
 dist
 /server/config/local.env.js
 npm-debug.log
+extracted_base/json
+extracted_base/csv
+extracted_base/tables_AnalysisV2.2.mdb
+
