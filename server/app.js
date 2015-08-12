@@ -32,5 +32,8 @@ server.listen(config.port, config.ip, function () {
   console.log('Express server listening on %d, in %s mode', config.port, app.get('env'));
 });
 
+require('./api/plant/load.js');
+require('./api/machine/load.js');
+
 // Expose app
 exports = module.exports = app;

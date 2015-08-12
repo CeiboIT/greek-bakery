@@ -3,6 +3,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
+// Switchboard Items table
 var switchBoardItems = new Schema({
 	SwitchboardID: Number,
 	ItemNumber: Number,
