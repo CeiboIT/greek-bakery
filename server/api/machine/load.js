@@ -12,21 +12,21 @@ var Maintance = require('./maintance.model');
 var dropCollection = true;
 
 loadTable({	clean: dropCollection,
-	  		jsonFile: 'tbMachine.json',
+	  		jsonFile: 'machine/tbMachine.json',
 	  		model: Machine});
 
 loadTable({ clean: dropCollection,
-	  		jsonFile: 'tbMachineDamage.json',
+	  		jsonFile: 'machine/tbMachineDamage.json',
 	  		model: MachineDamage});
 
 loadTable({ clean: dropCollection,
-	  		jsonFile: 'tbMachineMaintancePr.json',
+	  		jsonFile: 'machine/tbMachineMaintancePr.json',
 	  		model: MachineMaintancePr});
 
 loadTable({ clean: dropCollection,
-	  		jsonFile: 'tbMachineMaintanceAft.json',
+	  		jsonFile: 'machine/tbMachineMaintanceAft.json',
 	  		model: MachineMaintanceAft});
 
 loadTable({ clean: dropCollection,
-	  		jsonFile: 'tbMaintance.json',
+	  		jsonFile: 'machine/tbMaintance.json',
 	  		model: Maintance});

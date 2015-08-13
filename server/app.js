@@ -34,6 +34,14 @@ server.listen(config.port, config.ip, function () {
 
 require('./api/plant/load.js');
 require('./api/machine/load.js');
+require('./api/parapono/load.js');
+require('./api/marketer/load.js');
+require('./api/worker/load.js');
+require('./api/menu/load.js');
+require('./api/aFash/load.js');
+require('./api/bFash/load.js');
+require('./api/cFash/load.js');
+require('./api/mesurment/load.js');
 
 // Expose app
 exports = module.exports = app;

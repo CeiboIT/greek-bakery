@@ -1,0 +1,55 @@
+'use strict';
+
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+
+var cFASH = new Schema({
+	'IDC_FASH': { type: Number, required: true, unique: true },
+	'C_FASH_IDStorage': String,
+	'C_FASH': String,
+	'C_FASHBasic': Boolean,
+	'DateStart': Date,
+	'DateFinish': Date,
+	'IDCategory': { type: Schema.Types.String, ref: 'SortCategory' },
+	'IDSortSubCategory': { type: Schema.Types.String, ref: 'SortSubCategory' },
+	'IDMUnit': { type: Schema.Types.Number, ref: 'MesurmentUnit' },
+	'C_FASHPW': Number,
+	'IDOperation': { type: Schema.Types.String, ref: 'PlantPartsSectionsOperations' },
+	'C_FASHYield': Number,
+	'C_FASHScrap': Number,
+	'C_FASHLezanta': String,
+	'C_FASHProcedure': String,
+	'C_FASHPrint': Boolean,
+	'C_FASHDelete': Boolean,
+	'C_FASHGenerLocked': Boolean,
+	'DeprPerKg': Number,
+	'GenDamPerKg': Number,
+	'StoresDamKg': Number,
+	'SalesmenDamKg': Number,
+	'CarDamKg': Number,
+	'PromotionDamKg': Number,
+	'SalesDepreciationKg': Number,
+	'SpecificationLocked': Boolean,
+	'StorageContitions': String,
+	'SelfLife': String,
+	'ConsuptionGroup': String,
+	'ServersDamkg': Number,
+	'PH': String,
+	'Aw': String,
+	'TPC': Number,
+	'Mould fungi yeast': Number,
+	'E coli': Number,
+	'Text1': String,
+	'Text2': String,
+	'Text3': String,
+	'No1': Number,
+	'No2': Number,
+	'No3': Number,
+	'Date1': Date,
+	'Date2': Date,
+	'Memo1': String,
+	'YesNo1': Boolean,
+	'YesNo2': Boolean
+});
+
+module.exports = mongoose.model('CFash', cFASH);

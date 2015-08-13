@@ -5,23 +5,28 @@ var Plant = require('./plant.model');
 var PlantPart = require('./plantParts.model');
 var PlantPartSections = require('./plantPartsSections.model');
 var PlantPartsSectionsOperations = require('./plantPartsSectionsOperations.model');
+var Work = require('./work.model');
 
 // Load all plant related records and insert into db
 
 var dropCollection = true;
 
 loadTable({	clean: dropCollection,
-	  		jsonFile: 'tbPlant.json',
+	  		jsonFile: 'plant/tbPlant.json',
 	  		model: Plant});
 
 loadTable({ clean: dropCollection,
-	  		jsonFile: 'tbPlantParts.json',
+	  		jsonFile: 'plant/tbPlantParts.json',
 	  		model: PlantPart});
 
 loadTable({ clean: dropCollection,
-	  		jsonFile: 'tbPlantPartsSections.json',
+	  		jsonFile: 'plant/tbPlantPartsSections.json',
 	  		model: PlantPartSections});
 
 loadTable({ clean: dropCollection,
-	  		jsonFile: 'tbPlantPartsSectionsOperation.json',
+	  		jsonFile: 'plant/tbPlantPartsSectionsOperation.json',
 	  		model: PlantPartsSectionsOperations});
+
+loadTable({ clean: dropCollection,
+	  		jsonFile: 'plant/tbWork.json',
+	  		model: Work});
