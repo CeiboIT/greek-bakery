@@ -42,6 +42,11 @@ require('./api/aFash/load.js');
 require('./api/bFash/load.js');
 require('./api/cFash/load.js');
 require('./api/mesurment/load.js');
+require('./api/sort/load.js');
+require('./api/raw/load.js');
+// Store sales require('./api/store/load.js');
+// require('./api/production/load.js');
+require('./api/techInfo/load.js');
 
 // Expose app
 exports = module.exports = app;
