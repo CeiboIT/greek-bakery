@@ -1,12 +1,15 @@
 'use strict';
 
 var node_cj = require('node-csv-json'),
-    fs = require('fs');
+    fs = require('fs'),
+    JSON_FILES_PATH = 'json/',
+    CSV_FILES_PATH = 'csv-1/';
+
   
 
 var convert = function (inputName) {
-    var outputName = 'json/' + inputName.substr(0, inputName.lastIndexOf('.')) + '.json';
-    inputName = 'csv/' + inputName;
+    var outputName = JSON_FILES_PATH + inputName.substr(0, inputName.lastIndexOf('.')) + '.json';
+        inputName = CSV_FILES_PATH + inputName;
 
     console.log('inputName: ' + inputName);
     console.log('outputName: ' + outputName);
@@ -24,7 +27,7 @@ var convert = function (inputName) {
 };
 
 
-fs.readdir('csv/', function (err, files){
+fs.readdir(CSV_FILES_PATH, function (err, files){
     if(err) {
         throw err;
     }
