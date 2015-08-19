@@ -1,23 +1,8 @@
 'use strict';
 
-var mongoose = require('mongoose');
+var JSON_FILES_PATH = '../../extracted_base/json/';
 
 var operations = {
-	_insert: function (collection, model) {
-		console.log(model.modelName + ' to be inserted ' + collection.length);
-		var inserted = 0;
-		collection.forEach(function (item) {
-			model.create(item)
-				.then(function () {
-					inserted += 1;
-					if (inserted === collection.length) {
-						console.log(model.modelName + ' inserted ' + collection.length);
-					}
-				}, function (err) {
-	        		console.error('insert error ' +  model.modelName, err);
-	        	});
-		});
-	},
 	_insertBulk: function (jsonCollection, model) {
 		console.log(model.modelName + ' to be inserted ' + jsonCollection.length);
 		if (jsonCollection.length > 0) {
@@ -28,7 +13,6 @@ var operations = {
 			bulk.execute(function (err, result) {
 				if (err) {
 					console.error('insert error ' +  model.modelName + ' ', err.code);
-					console.error(err);
 					console.error('		-> ' , err.errmsg);
 					console.error('		-> ' , err.toJSON());
 		    	} else {
@@ -53,7 +37,7 @@ var operations = {
 };
 
 var	loadTable = function (opts) {
-	var collection = require('../../extracted_base/json/' + opts.jsonFile);
+	var collection = require(JSON_FILES_PATH + opts.jsonFile);
 	operations.clean(opts, opts.model, function () {
 		operations._insertBulk(collection, opts.model);
 	});
