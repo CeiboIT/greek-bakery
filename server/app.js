@@ -32,21 +32,22 @@ server.listen(config.port, config.ip, function () {
   console.log('Express server listening on %d, in %s mode', config.port, app.get('env'));
 });
 
-require('./api/plant/load.js');
-require('./api/machine/load.js');
-require('./api/parapono/load.js');
-require('./api/marketer/load.js');
-require('./api/worker/load.js');
-require('./api/menu/load.js');
-require('./api/aFash/load.js');
-require('./api/bFash/load.js');
-require('./api/cFash/load.js');
-require('./api/mesurment/load.js');
-require('./api/sort/load.js');
-require('./api/raw/load.js');
+// require('./api/plant/load.js');
+// require('./api/machine/load.js');
+// require('./api/parapono/load.js');
+// require('./api/marketer/load.js');
+// require('./api/worker/load.js');
+// require('./api/menu/load.js');
+// require('./api/aFash/load.js');
+// require('./api/bFash/load.js');
+// require('./api/cFash/load.js');
+// require('./api/mesurment/load.js');
+// require('./api/sort/load.js');
+// require('./api/raw/load.js');
 // Store sales require('./api/store/load.js');
 // require('./api/production/load.js');
-require('./api/techInfo/load.js');
+// require('./api/techInfo/load.js');
+// require('./api/evaluation/load.js');
 
 // Expose app
 exports = module.exports = app;
