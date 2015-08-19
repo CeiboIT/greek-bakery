@@ -1,22 +1,17 @@
 'use strict';
 
 angular.module('bakeryApp')
-  .controller('MainCtrl', function ($scope, $http) {
-    $scope.awesomeThings = [];
+    .controller('MainCtrl', function ($state) {
+        var main = this;
+        main.entities = [
+        {
+            name: 'A_Fash',
+            resource: 'aFash',
+            state: 'aFash'
+        }];
 
-    $http.get('/api/things').success(function(awesomeThings) {
-      $scope.awesomeThings = awesomeThings;
-    });
+        main.viewEntity = function (entity) {
+            $state.go(entity.state);
+        };
 
-    $scope.addThing = function() {
-      if($scope.newThing === '') {
-        return;
-      }
-      $http.post('/api/things', { name: $scope.newThing });
-      $scope.newThing = '';
-    };
-
-    $scope.deleteThing = function(thing) {
-      $http.delete('/api/things/' + thing._id);
-    };
   });
