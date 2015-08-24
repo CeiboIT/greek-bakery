@@ -8,4 +8,4 @@ var mesurment = new Schema({
 	'MesurmentUnit': String
 });
 
-module.exports = mongoose.model('Mesurment', mesurment);
+module.exports = mongoose.model('MesurmentUnit', mesurment);
