@@ -79,7 +79,7 @@
   },
   "scripts": {
     "start": "node server/app.js",
-    "test": "grunt test",
+    "test": "node --debug-brk /home/seba/.nvm/v0.10.38/bin/grunt test",
     "update-webdriver": "node node_modules/grunt-protractor-runner/node_modules/protractor/bin/webdriver-manager update"
   },
   "private": true
