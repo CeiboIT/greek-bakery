@@ -5,19 +5,20 @@ angular.module('bakeryApp', [
   'ngResource',
   'ngSanitize',
   'ui.router',
-  'ui.grid',
+  'ui.bootstrap',
+  'datatables',
   'restangular',
   'restServices',
   'aFash'
 ])
-  .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
-      $urlRouterProvider
-          .otherwise('/');
+    .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
+        $urlRouterProvider
+            .otherwise('/');
 
-      $locationProvider.html5Mode(true);
+        $locationProvider.html5Mode(true);
 
-      $stateProvider.state('layout', {
-        abstract: true,
-        templateUrl: 'layout/layout.html'
-      });
-  });
+        $stateProvider.state('layout', {
+            abstract: true,
+            templateUrl: 'app/layout/layout.html'
+        });
+    });

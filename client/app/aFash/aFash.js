@@ -5,56 +5,59 @@
 
 	AFash.config(function ($stateProvider) {
 		$stateProvider.state('aFash', {
+			parent: 'layout',
 			url: '/aFash',
 			templateUrl: 'app/aFash/list.html',
 			controller: 'aFashController as aFashController'
 		});
 	});
 
-	AFash.controller('aFashController', function ($q, $scope, entityService) {
+	AFash.factory('viewItem', function viewItemFactory ($modal, entityService) {
+		return function viewItem (item) {
+			entityService.get(item.id)
+				.then(function (response) {
+			    	$modal.open({
+					    templateUrl: 'app/aFash/view.html',
+					    controller: function () {
+					    	var viewController = this;
+					    	viewController.item = response;
+					    },
+					    controllerAs: 'viewController'
+				    });
+				});
+	    };		
+	});
+
+	AFash.controller('aFashController', 
+		function ($scope, viewItem, DTOptionsBuilder, DTColumnBuilder, entityService) {
+		
 		var controller = this,
 			service = entityService.getCrudFor('aFash');
-			controller.gridOptions = {};
+		
+		controller.dtOptions = DTOptionsBuilder
+			.fromFnPromise(function() {
+	        	return service.getAll();
+	    	})
+	    	.withPaginationType('full_numbers')
+	    	.withOption('rowCallback', rowCallback);
 
-		controller.gridOptions.columnDefs = 
-			[{displayName: 'Fash', field: 'A_FASH'}, 
-			 {displayName: 'Procedure', field: 'A_FASHProcedure'},
-			 {displayName: 'Storeage Id', field: 'A_FASH_IDStorage'},
-			 {displayName: 'Yield', field: 'A_FASHYield'},
-			 {displayName: 'PW', field: 'A_FASH_PW'},
-			 {displayName: 'Scrap', field: 'A_FASHScrap'},
-			 {displayName: 'Basic', field: 'A_FASHBasic'},
-			 {displayName: 'Delete', field: 'A_FASHDelete'},
-			 {displayName: 'Print', field: 'A_FASHPrint'},
-			];
+	    controller.dtColumns = [
+	        DTColumnBuilder.newColumn('A_FASH_IDStorage').withTitle('Id'),
+	        DTColumnBuilder.newColumn('A_FASH').withTitle('Fash'),
+	        DTColumnBuilder.newColumn('A_FASHProcedure').withTitle('Procedure'),
+	        DTColumnBuilder.newColumn('A_FASH_IDStorage').withTitle('Id storage'),
+	    ];
 
-		service.getAll()
-			.then(function (data) {
-				// $scope.gridOptions = {data: data};
-				controller.gridOptions.data = data;
-			});
-
-		// controller.gridOptions = 
-		// { data: [
-		//     {
-		//         'firstName': 'Cox',
-		//         'lastName': 'Carney',
-		//         'company': 'Enormo',
-		//         'employed': true
-		//     },
-		//     {
-		//         'firstName': 'Lorraine',
-		//         'lastName': 'Wise',
-		//         'company': 'Comveyer',
-		//         'employed': false
-		//     },
-		//     {
-		//         'firstName': 'Nancy',
-		//         'lastName': 'Waters',
-		//         'company': 'Fuelton',
-		//         'employed': false
-		//     }
-		// ]};
+     	function rowCallback(nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+	        // Unbind first in order to avoid any duplicate handler (see https://github.com/l-lin/angular-datatables/issues/87)
+	        $('td', nRow).unbind('click');
+	        $('td', nRow).bind('click', function() {
+	            $scope.$apply(function() {
+	                viewItem(aData);
+	            });
+	        });
+	        return nRow;
+	    }
 
 	});
 
