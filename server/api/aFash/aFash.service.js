@@ -24,7 +24,6 @@ operations.getMaterialsByFash = function (fashId) {
 
 operations.getDetail = function (fashId) {
 	return AFash.findById(fashId)
-		.populate('IDCategory')
   		.then(function (aFash) {
   			var aFashObject = aFash.toObject();
 
