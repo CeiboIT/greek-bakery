@@ -6,6 +6,6 @@ var controller = require('./aFash.controller');
 var router = express.Router();
 
 router.get('/', controller.index);
-router.post('/detail', controller.detail);
+router.get('/:id', controller.detail);
 
 module.exports = router;

@@ -22,16 +22,15 @@ describe('GET /api/aFash', function() {
 
 });
 
-describe('POST /api/aFash/detail', function() {
+describe('GET /api/aFash/:id', function() {
   var aFash; 
   request(app).get('/api/aFash').end(function (err, res) {
     aFash = res.body[0];
-    console.log(aFash);
   });
 
-  it('should respond with JSON of aFash completed (joined)', function(done) {
+  it('should respond with JSON array of a Fash populated', function(done) {
     request(app)
-      .post('/api/aFash/detail').send(aFash)
+      .get('/api/aFash/' + aFash._id)
       .expect(200)
       .expect('Content-Type', /json/)
       .end(function(err, res) {
@@ -39,10 +38,9 @@ describe('POST /api/aFash/detail', function() {
             return done(err);
         }
         res.body.should.be.instanceof(Object);
-        console.log('Response populatd');
-        console.log(res.body);
+        console.log('Getted aFash: ', res.body);
         done();
       });
   });
-  
+
 });

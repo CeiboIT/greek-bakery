@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var aFASH = new Schema({
-	'IDA_FASH': { type: Number, required: true, unique: true },
+	'IDA_FASH': { type: String, required: true, unique: true },
 	'A_FASH_IDStorage': String,
 	'A_FASH': String,
 	'A_FASHBasic': Boolean,
@@ -12,7 +12,7 @@ var aFASH = new Schema({
 	'DateFinish': Date,
 	'IDCategory': { type: Schema.Types.String, ref: 'SortCategory' },
 	'IDSortSubCategory': { type: Schema.Types.String, ref: 'SortSubCategory' },
-	'IDMUnit': { type: Schema.Types.Number, ref: 'MesurmentUnit' },
+	'IDMUnit': { type: Schema.Types.String, ref: 'MesurmentUnit' },
 	'A_FASH_PW': Number,
 	'IDOperation': { type: Schema.Types.String, ref: 'PlantPartsSectionsOperations' },
 	'A_FASHYield': Number,
