@@ -14,7 +14,7 @@
 
 	AFash.factory('viewItem', function viewItemFactory ($modal, entityService) {
 		return function viewItem (item) {
-			entityService.get(item.id)
+			entityService.getCrudFor('aFash').get(item._id)
 				.then(function (response) {
 			    	$modal.open({
 					    templateUrl: 'app/aFash/view.html',
