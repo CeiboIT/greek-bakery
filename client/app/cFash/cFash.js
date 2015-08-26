@@ -12,7 +12,7 @@
         });
     });
 
-    CFash.factory('viewItem', function viewItemFactory ($modal, entityService) {
+    CFash.factory('viewCFashItem', function viewItemFactory ($modal, entityService) {
         return function viewItem (item) {
             entityService.getCrudFor('cFash').get(item._id)
                 .then(function (response) {
@@ -29,7 +29,7 @@
     });
 
     CFash.controller('cFashController',
-        function ($scope, viewItem, DTOptionsBuilder, DTColumnBuilder, entityService) {
+        function ($scope, viewCFashItem, DTOptionsBuilder, DTColumnBuilder, entityService) {
 
         var controller = this,
             service = entityService.getCrudFor('cFash');
@@ -53,7 +53,7 @@
             $('td', nRow).unbind('click');
             $('td', nRow).bind('click', function() {
                 $scope.$apply(function() {
-                    viewItem(aData);
+                    viewCFashItem(aData);
                 });
             });
             return nRow;

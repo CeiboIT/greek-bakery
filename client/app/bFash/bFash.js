@@ -12,7 +12,7 @@
         });
     });
 
-    BFash.factory('viewItem', function viewItemFactory ($modal, entityService) {
+    BFash.factory('viewBFashItem', function viewItemFactory ($modal, entityService) {
         return function viewItem (item) {
             entityService.getCrudFor('bFash').get(item._id)
                 .then(function (response) {
@@ -29,7 +29,7 @@
     });
 
     BFash.controller('bFashController',
-        function ($scope, viewItem, DTOptionsBuilder, DTColumnBuilder, entityService) {
+        function ($scope, viewBFashItem, DTOptionsBuilder, DTColumnBuilder, entityService) {
 
         var controller = this,
             service = entityService.getCrudFor('bFash');
@@ -44,8 +44,9 @@
         controller.dtColumns = [
             DTColumnBuilder.newColumn('B_FASH_IDStorage').withTitle('Id'),
             DTColumnBuilder.newColumn('B_FASH').withTitle('Fash'),
+            DTColumnBuilder.newColumn('IDCategory').withTitle('Category'),
+            DTColumnBuilder.newColumn('IDMUnit').withTitle('Measurement'),
             DTColumnBuilder.newColumn('B_FASHProcedure').withTitle('Procedure'),
-            DTColumnBuilder.newColumn('B_FASH_IDStorage').withTitle('Id storage'),
         ];
 
         function rowCallback(nRow, aData, iDisplayIndex, iDisplayIndexFull) {
@@ -53,7 +54,7 @@
             $('td', nRow).unbind('click');
             $('td', nRow).bind('click', function() {
                 $scope.$apply(function() {
-                    viewItem(aData);
+                    viewBFashItem(aData);
                 });
             });
             return nRow;

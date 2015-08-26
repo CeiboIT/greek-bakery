@@ -1,20 +1,20 @@
 <table class="table">
     <thead>
         <tr>
+            <th>Id</th>
             <th>Sort</th>
             <th>Quantity</th>
             <th>Loose</th>
             <th>Recipe</th>
-            <th>Sxolia</th>
         </tr>
     </thead>
     <tbody>
         <tr ng-repeat="material in viewController.item.materials">
+            <td>{{material.IDB_FASH}}</td>
             <td>{{material.IDSort}}</td>
-            <td>{{material.IDA_FASHQuantity}}</td>
-            <td>{{material.IDA_FASHLoose}}</td>
-            <td>{{material.IDA_FASHRecipe}}</td>
-            <td>{{material.Sxolia}}</td>
+            <td>{{material.IDB_FASHQuantity}}</td>
+            <td>{{material.IDB_FASHLoose}}</td>
+            <td>{{material.IDB_FASHRecipe}}</td>
         </tr>
     </thead>
 </table>
