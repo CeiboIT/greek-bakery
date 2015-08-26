@@ -45,7 +45,6 @@
             DTColumnBuilder.newColumn('C_FASH_IDStorage').withTitle('Id'),
             DTColumnBuilder.newColumn('C_FASH').withTitle('Fash'),
             DTColumnBuilder.newColumn('C_FASHProcedure').withTitle('Procedure'),
-            DTColumnBuilder.newColumn('C_FASH_IDStorage').withTitle('Id storage'),
         ];
 
         function rowCallback(nRow, aData, iDisplayIndex, iDisplayIndexFull) {

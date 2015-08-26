@@ -44,8 +44,6 @@
 	    controller.dtColumns = [
 	        DTColumnBuilder.newColumn('A_FASH_IDStorage').withTitle('Id'),
 	        DTColumnBuilder.newColumn('A_FASH').withTitle('Fash'),
-	        DTColumnBuilder.newColumn('IDCategory').withTitle('Category'),
-	        DTColumnBuilder.newColumn('IDMUnit').withTitle('Measurement'),
 	        DTColumnBuilder.newColumn('A_FASHProcedure').withTitle('Procedure'),
 	    ];
 
