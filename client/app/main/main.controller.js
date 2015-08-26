@@ -15,9 +15,9 @@ angular.module('bakeryApp')
                 state: 'bFash'
             },
             {
-                name: 'B_Fash',
-                resource: 'bFash',
-                state: 'bFash'
+                name: 'C_Fash',
+                resource: 'cFash',
+                state: 'cFash'
             }
         ];
 

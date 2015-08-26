@@ -2,12 +2,11 @@
 
 var CFash = require('./cFash.model');
 var CFashMaterials = require('./cFashMaterials.model');
+var CFashMaterialsYS = require('./cFashMaterialsYS.model');
 var MesurmentUnit = require('../mesurment/mesurment.model');
 var operations = {};
 
 function populate (cFash) {
-    // TODO este populate manual está porque no puedo hacer funcionar al populate propio de mongoose.
-    // El findOne, debería recibir un parametro para buscar por id, desde cFash.IDMUnit, pero no funciona la busqueda por id.
     return MesurmentUnit.findOne().exec()
             .then(function (mesurmentUnit) {
                 cFash.mesurmentUnit = mesurmentUnit;
@@ -18,8 +17,13 @@ function populate (cFash) {
 }
 
 operations.getMaterialsByFash = function (fashId) {
-    console.log('Materiasl for ' + fashId);
-    return CFashMaterials.find({'IDA_FASH': fashId}).exec();
+    console.log('Material for ' + fashId);
+    return CFashMaterials.find({'IDC_FASH': fashId}).exec();
+};
+
+operations.getMaterialsYSByFash = function (fashId) {
+    console.log('MaterialYS for ' + fashId);
+    return CFashMaterialsYS.find({'IDC_FASH': fashId}).exec();
 };
 
 operations.getDetail = function (fashId) {
@@ -31,11 +35,21 @@ operations.getDetail = function (fashId) {
                 return null;
             }
 
-            return operations.getMaterialsByFash(cFash.IDA_FASH)
+            return operations.getMaterialsByFash(cFash.IDC_FASH)
                 .then(function (materials) {
                     console.log('adding materials');
                     cFashObject.materials = materials;
+                    //console.log(cFashObject);
                     return cFashObject;
+                })
+                .then(function() {
+                    return operations.getMaterialsYSByFash(cFash.IDC_FASH)
+                        .then(function (materialsYS) {
+                            console.log('adding materialsYS');
+                            cFashObject.materialsYS = materialsYS;
+                            //console.log(cFashObject);
+                            return cFashObject;
+                        })
                 })
                 .then(function () {
                     return populate(cFashObject)

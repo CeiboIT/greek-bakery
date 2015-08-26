@@ -6,8 +6,6 @@ var MesurmentUnit = require('../mesurment/mesurment.model');
 var operations = {};
 
 function populate (bFash) {
-    // TODO este populate manual está porque no puedo hacer funcionar al populate propio de mongoose.
-    // El findOne, debería recibir un parametro para buscar por id, desde bFash.IDMUnit, pero no funciona la busqueda por id.
     return MesurmentUnit.findOne().exec()
             .then(function (mesurmentUnit) {
                 bFash.mesurmentUnit = mesurmentUnit;
@@ -18,8 +16,8 @@ function populate (bFash) {
 }
 
 operations.getMaterialsByFash = function (fashId) {
-    console.log('Materiasl for ' + fashId);
-    return BFashMaterials.find({'IDA_FASH': fashId}).exec();
+    console.log('Material for ' + fashId);
+    return BFashMaterials.find({'IDB_FASH': fashId}).exec();
 };
 
 operations.getDetail = function (fashId) {
@@ -31,7 +29,7 @@ operations.getDetail = function (fashId) {
                 return null;
             }
 
-            return operations.getMaterialsByFash(bFash.IDA_FASH)
+            return operations.getMaterialsByFash(bFash.IDB_FASH)
                 .then(function (materials) {
                     console.log('adding materials');
                     bFashObject.materials = materials;

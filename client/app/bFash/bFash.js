@@ -42,10 +42,10 @@
             .withOption('rowCallback', rowCallback);
 
         controller.dtColumns = [
-            DTColumnBuilder.newColumn('A_FASH_IDStorage').withTitle('Id'),
-            DTColumnBuilder.newColumn('A_FASH').withTitle('Fash'),
-            DTColumnBuilder.newColumn('A_FASHProcedure').withTitle('Procedure'),
-            DTColumnBuilder.newColumn('A_FASH_IDStorage').withTitle('Id storage'),
+            DTColumnBuilder.newColumn('B_FASH_IDStorage').withTitle('Id'),
+            DTColumnBuilder.newColumn('B_FASH').withTitle('Fash'),
+            DTColumnBuilder.newColumn('B_FASHProcedure').withTitle('Procedure'),
+            DTColumnBuilder.newColumn('B_FASH_IDStorage').withTitle('Id storage'),
         ];
 
         function rowCallback(nRow, aData, iDisplayIndex, iDisplayIndexFull) {
