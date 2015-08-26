@@ -4,11 +4,11 @@ var should = require('should');
 var app = require('../../app');
 var request = require('supertest');
 
-describe('GET /api/aFash', function() {
+describe('GET /api/cFash', function() {
 
-  it('should respond with JSON array of aFashes, populated', function(done) {
+  it('should respond with JSON array of cFashes, populated', function(done) {
     request(app)
-      .get('/api/aFash')
+      .get('/api/cFash')
       .expect(200)
       .expect('Content-Type', /json/)
       .end(function(err, res) {
@@ -22,15 +22,15 @@ describe('GET /api/aFash', function() {
 
 });
 
-describe('GET /api/aFash/:id', function() {
-  var aFash; 
-  request(app).get('/api/aFash').end(function (err, res) {
-    aFash = res.body[0];
+describe('GET /api/cFash/:id', function() {
+  var cFash;
+  request(app).get('/api/cFash').end(function (err, res) {
+    cFash = res.body[0];
   });
 
   it('should respond with JSON array of a Fash populated', function(done) {
     request(app)
-      .get('/api/aFash/' + aFash._id)
+      .get('/api/cFash/' + cFash._id)
       .expect(200)
       .expect('Content-Type', /json/)
       .end(function(err, res) {
@@ -38,7 +38,7 @@ describe('GET /api/aFash/:id', function() {
             return done(err);
         }
         res.body.should.be.instanceof(Object);
-        // console.log('Getted aFash: ', res.body);
+        console.log('Getted cFash: ', res.body);
         done();
       });
   });

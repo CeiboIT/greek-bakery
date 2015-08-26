@@ -10,10 +10,25 @@ angular.module('bakeryApp')
                 state: 'aFash'
             },
             {
+                name: 'B_Fash',
+                resource: 'bFash',
+                state: 'bFash'
+            },
+            {
+                name: 'C_Fash',
+                resource: 'cFash',
+                state: 'cFash'
+            },
+            {
+                name: 'Plant',
+                resource: 'plant',
+                state: 'plant'
+            },
+            {
                 name: 'Machine',
                 resource: 'machine',
                 state: 'machine'
-            },
+            }
         ];
 
         main.viewEntity = function (entity) {

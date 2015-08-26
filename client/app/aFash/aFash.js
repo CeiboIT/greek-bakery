@@ -12,7 +12,7 @@
 		});
 	});
 
-	AFash.factory('viewItem', function viewItemFactory ($modal, entityService) {
+	AFash.factory('viewAFashItem', function viewItemFactory ($modal, entityService) {
 		return function viewItem (item) {
 			entityService.getCrudFor('aFash').get(item._id)
 				.then(function (response) {
@@ -25,15 +25,15 @@
 					    controllerAs: 'viewController'
 				    });
 				});
-	    };		
+	    };
 	});
 
-	AFash.controller('aFashController', 
-		function ($scope, viewItem, DTOptionsBuilder, DTColumnBuilder, entityService) {
-		
+	AFash.controller('aFashController',
+		function ($scope, viewAFashItem, DTOptionsBuilder, DTColumnBuilder, entityService) {
+
 		var controller = this,
 			service = entityService.getCrudFor('aFash');
-		
+
 		controller.dtOptions = DTOptionsBuilder
 			.fromFnPromise(function() {
 	        	return service.getAll();
@@ -45,7 +45,6 @@
 	        DTColumnBuilder.newColumn('A_FASH_IDStorage').withTitle('Id'),
 	        DTColumnBuilder.newColumn('A_FASH').withTitle('Fash'),
 	        DTColumnBuilder.newColumn('A_FASHProcedure').withTitle('Procedure'),
-	        DTColumnBuilder.newColumn('A_FASH_IDStorage').withTitle('Id storage'),
 	    ];
 
      	function rowCallback(nRow, aData, iDisplayIndex, iDisplayIndexFull) {
@@ -53,7 +52,7 @@
 	        $('td', nRow).unbind('click');
 	        $('td', nRow).bind('click', function() {
 	            $scope.$apply(function() {
-	                viewItem(aData);
+	                viewAFashItem(aData);
 	            });
 	        });
 	        return nRow;

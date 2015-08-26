@@ -7,7 +7,7 @@ var Schema = mongoose.Schema;
 
 var plantParts = new Schema({
 	'IDPart': { type: String, required: true, unique: true },
-	'IDplant': { type: Schema.Types.Number, ref: 'Plant' },
+	'IDplant': { type: Schema.Types.String, ref: 'Plant' },
 	'Part': String
 });
 
