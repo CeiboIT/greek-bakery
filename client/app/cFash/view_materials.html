@@ -1,0 +1,22 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Sort</th>
+            <th>Quantity</th>
+            <th>Loose</th>
+            <th>Recipe</th>
+            <th>Sxolia</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="material in viewController.item.materials">
+            <td>{{material.IDC_FASH}}</td>
+            <td>{{material.IDSort}}</td>
+            <td>{{material.IDC_FASHQuantity}}</td>
+            <td>{{material.IDC_FASHLoose}}</td>
+            <td>{{material.IDC_FASHRecipe}}</td>
+            <td>{{material.IDC_FASHSxolia}}</td>
+        </tr>
+    </thead>
+</table>

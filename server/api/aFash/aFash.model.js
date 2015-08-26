@@ -30,7 +30,7 @@ var aFASH = new Schema({
 	'Date2': Date,
 	'Memo1': String,
 	'YesNo1': Boolean,
-	'YesNo2': Boolean,
+	'YesNo2': Boolean
 });
 
 module.exports = mongoose.model('AFash', aFASH);
