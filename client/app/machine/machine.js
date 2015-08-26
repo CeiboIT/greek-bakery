@@ -45,7 +45,7 @@
             DTColumnBuilder.newColumn('IdMachine').withTitle('Id'),
             DTColumnBuilder.newColumn('Machine').withTitle('Machine'),
             DTColumnBuilder.newColumn('Constractor').withTitle('Constractor'),
-            DTColumnBuilder.newColumn('ConstractorDate').withTitle('Constractor Date'),
+            DTColumnBuilder.newColumn('ConstractionDate').withTitle('Constraction Date'),
         ];
 
         function rowCallback(nRow, aData, iDisplayIndex, iDisplayIndexFull) {

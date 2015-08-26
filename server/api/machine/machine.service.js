@@ -62,6 +62,17 @@ operations.getDetail = function (machineId) {
                         // JOIN MAINTANCEAFT WITH MAINTANCE STRING
                         .then(function (){
                             console.log('adding maintanceAft > maintance');
+                            machineObject.maintanceAft.forEach(function (aft) {
+                                //console.log(aft);
+                                Maintance.find().exec()
+                                    .then(function (maintances) {
+                                        maintances.forEach(function (maintance) {
+                                            if (maintance.IdMaintance == aft.IdMaintanceAfter) {
+                                                aft.IdMaintanceAfter = maintance;
+                                            }
+                                        })
+                                    })
+                            })
                         })
                 })
                 .then(function() {
@@ -76,6 +87,17 @@ operations.getDetail = function (machineId) {
                         // JOIN MAINTANCEPR WITH MAINTANCE STRING
                         .then(function (){
                             console.log('adding maintancePr > maintance');
+                            machineObject.maintancePr.forEach(function (pr) {
+                                //console.log(pr);
+                                Maintance.find().exec()
+                                    .then(function (maintances) {
+                                        maintances.forEach(function (maintance) {
+                                            if (maintance.IdMaintance == pr.IdMaintance) {
+                                                pr.IdMaintance = maintance;
+                                            }
+                                        })
+                                    })
+                            })
                         })
                 })
                 .then(function () {
