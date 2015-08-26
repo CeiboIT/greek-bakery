@@ -8,7 +8,13 @@ angular.module('bakeryApp')
             name: 'A_Fash',
             resource: 'aFash',
             state: 'aFash'
-        }];
+        },
+        {
+            name: 'Plant',
+            resource: 'plant',
+            state: 'plant'
+        }
+        ];
 
         main.viewEntity = function (entity) {
             $state.go(entity.state);
