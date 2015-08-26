@@ -1,17 +1,18 @@
 'use strict';
 
 var Machine = require('./machine.model');
-var MachineDamage = require('./machine/machineDamage.model');
-var MachineMaintanceAft = require('./machine/machineMaintanceAft.model');
-var MachineMaintancePr = require('./machine/machineMaintancePr.model');
+var MachineDamage = require('./machineDamage.model');
+var MachineMaintanceAft = require('./machineMaintanceAft.model');
+var MachineMaintancePr = require('./machineMaintancePr.model');
+var IDSection = require('../plant/plantPartsSections.model');
+var Maintance = require('./maintance.model');
+
 var operations = {};
 
 function populate (machine) {
-    // TODO este populate manual está porque no puedo hacer funcionar al populate propio de mongoose.
-    // El findOne, debería recibir un parametro para buscar por id, desde machine.IDMUnit, pero no funciona la busqueda por id.
-    return MesurmentUnit.findOne().exec()
-            .then(function (mesurmentUnit) {
-                machine.mesurmentUnit = mesurmentUnit;
+    return IDSection.findOne().exec()
+            .then(function (section) {
+                machine.IDSection = section;
                 return machine;
             }, function (error) {
                 console.error(error);
@@ -43,16 +44,45 @@ operations.getDetail = function (machineId) {
             }
 
             return operations.getDamageByMachine(machine.IdMachine)
-                .then(function (materials) {
-                    console.log('adding materials');
-                    machineObject.materials = materials;
+                .then(function (damages) {
+                    console.log('adding damages');
+                    machineObject.damages = damages;
+                    //console.log(machineObject);
                     return machineObject;
+                })
+                .then(function() {
+                    return operations.getMaintanceAftByMachine(machine.IdMachine)
+                        .then(function (maintanceAft) {
+                            console.log('adding maintanceAft');
+                            machineObject.maintanceAft = maintanceAft;
+                            //console.log(machineObject);
+                            return machineObject;
+                        })
+
+                        // JOIN MAINTANCEAFT WITH MAINTANCE STRING
+                        .then(function (){
+                            console.log('adding maintanceAft > maintance');
+                        })
+                })
+                .then(function() {
+                    return operations.getMaintancePrByMachine(machine.IdMachine)
+                        .then(function (maintancePr) {
+                            console.log('adding maintancePr');
+                            machineObject.maintancePr = maintancePr;
+                            //console.log(machineObject);
+                            return machineObject;
+                        })
+
+                        // JOIN MAINTANCEPR WITH MAINTANCE STRING
+                        .then(function (){
+                            console.log('adding maintancePr > maintance');
+                        })
                 })
                 .then(function () {
                     return populate(machineObject)
-                        .then(function (populatedFash) {
-                            console.log('adding MesurmentUnit');
-                            return populatedFash;
+                        .then(function (populatedMachine) {
+                            console.log('adding IDSection');
+                            return populatedMachine;
                         });
                 });
         });
