@@ -1,0 +1,29 @@
+<div ng-cloak>
+	<h3> Plant {{plantController.plant.PlantDescription}}</h3>
+
+	<div class="part" ng-repeat="part in plantController.plant.parts">
+		<br>
+		<h4><span>Part: {{part.Part}} </span></h4>
+		<div class="part-section" ng-repeat="section in part.sections">
+			<h5>Section: {{section.Section}} </h5>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Opertaion</th>
+						<th>Wh productivity</th>
+						<th>Wh cost</th>
+						<th>Operation loced</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="operation in section.operations">
+						<td>{{operation.Operation}}</td>
+						<td>{{operation.Wh_Productivity}}</td>
+						<td>{{operation.Wh_Cost}}</td>
+						<td>{{operation.IDOperationLoced}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

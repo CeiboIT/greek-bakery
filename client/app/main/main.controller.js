@@ -18,6 +18,11 @@ angular.module('bakeryApp')
                 name: 'C_Fash',
                 resource: 'cFash',
                 state: 'cFash'
+            },
+            {
+                name: 'Plant',
+                resource: 'plant',
+                state: 'plant'
             }
         ];
 

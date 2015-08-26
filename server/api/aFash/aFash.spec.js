@@ -38,7 +38,7 @@ describe('GET /api/aFash/:id', function() {
             return done(err);
         }
         res.body.should.be.instanceof(Object);
-        console.log('Getted aFash: ', res.body);
+        // console.log('Getted aFash: ', res.body);
         done();
       });
   });
