@@ -1,6 +1,7 @@
 <table class="table">
 	<thead>
 		<tr>
+			<th>Id</th>
 			<th>Sort</th>
 			<th>Quantity</th>
 			<th>Loose</th>
@@ -10,6 +11,7 @@
 	</thead>
 	<tbody>
 		<tr ng-repeat="material in viewController.item.materials">
+			<td>{{material.IDA_FASH}}</td>
 			<td>{{material.IDSort}}</td>
 			<td>{{material.IDA_FASHQuantity}}</td>
 			<td>{{material.IDA_FASHLoose}}</td>

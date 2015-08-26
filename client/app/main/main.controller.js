@@ -4,16 +4,26 @@ angular.module('bakeryApp')
     .controller('MainCtrl', function ($state) {
         var main = this;
         main.entities = [
-        {
-            name: 'A_Fash',
-            resource: 'aFash',
-            state: 'aFash'
-        },
-        {
-            name: 'Plant',
-            resource: 'plant',
-            state: 'plant'
-        }
+            {
+                name: 'A_Fash',
+                resource: 'aFash',
+                state: 'aFash'
+            },
+            {
+                name: 'B_Fash',
+                resource: 'bFash',
+                state: 'bFash'
+            },
+            {
+                name: 'C_Fash',
+                resource: 'cFash',
+                state: 'cFash'
+            },
+            {
+                name: 'Plant',
+                resource: 'plant',
+                state: 'plant'
+            }
         ];
 
         main.viewEntity = function (entity) {
