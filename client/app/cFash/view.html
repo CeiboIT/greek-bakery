@@ -1,0 +1,28 @@
+<div class="modal-header" >
+    <h4 class="modal-title">CFash</h4>
+</div>
+<div class="modal-body">
+    <div class="container-fluid">
+        <ul>
+            <li><strong>Id</strong>: {{viewController.item.IDA_FASH}} </li>
+            <li><strong>Fash</strong>: {{viewController.item.A_FASH}} </li>
+            <li><strong>ID Storage</strong>: {{viewController.item.A_FASH_IDStorage}} </li>
+            <li><strong>Pw</strong>: {{viewController.item.A_FASH_PW}} </li>
+            <li><strong>Yireld</strong>: {{viewController.item.A_FASHYield}} </li>
+            <li><strong>Scrap</strong>: {{viewController.item.A_FASHScrap}} </li>
+            <li><strong>Procedure</strong>: {{viewController.item.A_FASHProcedure}} </li>
+            <li><strong>Date start</strong>: {{viewController.item.DateStart}} </li>
+            <li><strong>Date finish</strong>: {{viewController.item.DateFinish}} </li>
+            <br>
+            <ng-include src="'app/cFash/view_materials.html'"></ng-include>
+        </ul>
+    </div>
+</div> <!-- modal body -->
+<div class="modal-footer">
+    <button id="ok_button"
+            type="submit"
+            ng-click="$close()"
+            class="btn btn-success">
+        Close
+    </button>
+</div>
