@@ -38,7 +38,6 @@ describe('GET /api/bFash/:id', function() {
             return done(err);
         }
         res.body.should.be.instanceof(Object);
-        console.log('Getted bFash: ', res.body);
         done();
       });
   });
