@@ -1,13 +1,14 @@
 'use strict';
 
 var mongoose = require('mongoose');
+var populatePlugin = require('mongoose-power-populate')(mongoose);
 var Schema = mongoose.Schema;
 
 var raw = new Schema({
 	'IDRaw': { type: Number, required: true, unique: true },
 	'Choice': Boolean,
 	'Raw': String,
-	'IDCompositionDescription': { type: Schema.Types.Number, ref: 'RawCompositionDescription' },
+	'IDCompositionDescription': { type: Schema.Types.String, ref: 'RawCompositionDescription' },
 	'IDCategory': { type: Schema.Types.String, ref: 'SortCategory' },
 	'Carbohydrt': Number,
 	'Sugars': Number,
@@ -38,6 +39,16 @@ var raw = new Schema({
 	'Presevatives': Number,
 	'Flavors': Number,
 	'Colors': Number
+});
+
+raw.plugin(populatePlugin, {
+    IDCompositionDescription: {
+      ref: 'RawCompositionDescription',
+      foreignKey: 'IDCompositionDescription',
+      localKey: 'IDCompositionDescription',
+      lean: true,
+      singular: true
+    }
 });
 
 module.exports = mongoose.model('Raw', raw);

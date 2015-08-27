@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var compositionDescription = new Schema({
-	'IDCompositionDescription': { type: Number, required: true, unique: true },
+	'IDCompositionDescription': { type: String, required: true, unique: true },
 	'CompositionDescription': String,
 	'CompositionDescriptionEnglish': String,
 	'CDFrench': String,
