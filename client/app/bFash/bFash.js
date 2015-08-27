@@ -34,6 +34,17 @@
         var controller = this,
             service = entityService.getCrudFor('bFash');
 
+        function rowCallback(nRow, aData) {
+            // Unbind first in order to avoid any duplicate handler (see https://github.com/l-lin/angular-datatables/issues/87)
+            $('td', nRow).unbind('click');
+            $('td', nRow).bind('click', function() {
+                $scope.$apply(function() {
+                    viewBFashItem(aData);
+                });
+            });
+            return nRow;
+        }
+
         controller.dtOptions = DTOptionsBuilder
             .fromFnPromise(function() {
                 return service.getAll();
@@ -46,17 +57,6 @@
             DTColumnBuilder.newColumn('B_FASH').withTitle('Fash'),
             DTColumnBuilder.newColumn('B_FASHProcedure').withTitle('Procedure'),
         ];
-
-        function rowCallback(nRow, aData, iDisplayIndex, iDisplayIndexFull) {
-            // Unbind first in order to avoid any duplicate handler (see https://github.com/l-lin/angular-datatables/issues/87)
-            $('td', nRow).unbind('click');
-            $('td', nRow).bind('click', function() {
-                $scope.$apply(function() {
-                    viewBFashItem(aData);
-                });
-            });
-            return nRow;
-        }
 
     });
 

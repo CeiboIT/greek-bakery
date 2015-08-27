@@ -34,6 +34,17 @@
         var controller = this,
             service = entityService.getCrudFor('machine');
 
+        function rowCallback(nRow, aData) {
+            // Unbind first in order to avoid any duplicate handler (see https://github.com/l-lin/angular-datatables/issues/87)
+            $('td', nRow).unbind('click');
+            $('td', nRow).bind('click', function() {
+                $scope.$apply(function() {
+                    viewMachineItem(aData);
+                });
+            });
+            return nRow;
+        }
+        
         controller.dtOptions = DTOptionsBuilder
             .fromFnPromise(function() {
                 return service.getAll();
@@ -47,17 +58,6 @@
             DTColumnBuilder.newColumn('Constractor').withTitle('Constractor'),
             DTColumnBuilder.newColumn('ConstractionDate').withTitle('Constraction Date'),
         ];
-
-        function rowCallback(nRow, aData, iDisplayIndex, iDisplayIndexFull) {
-            // Unbind first in order to avoid any duplicate handler (see https://github.com/l-lin/angular-datatables/issues/87)
-            $('td', nRow).unbind('click');
-            $('td', nRow).bind('click', function() {
-                $scope.$apply(function() {
-                    viewMachineItem(aData);
-                });
-            });
-            return nRow;
-        }
 
     });
 
