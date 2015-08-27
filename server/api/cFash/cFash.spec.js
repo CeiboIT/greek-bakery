@@ -38,7 +38,6 @@ describe('GET /api/cFash/:id', function() {
             return done(err);
         }
         res.body.should.be.instanceof(Object);
-        console.log('Getted cFash: ', res.body);
         done();
       });
   });

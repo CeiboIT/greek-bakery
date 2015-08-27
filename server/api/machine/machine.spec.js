@@ -38,7 +38,6 @@ describe('GET /api/machine/:id', function() {
             return done(err);
         }
         res.body.should.be.instanceof(Object);
-        console.log('Getted machine: ', res.body);
         done();
       });
   });

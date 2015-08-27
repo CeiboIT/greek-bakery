@@ -16,7 +16,6 @@ describe('GET /api/plant', function() {
             return done(err);
         }
         res.body.should.be.instanceof(Object);
-        console.log('Plant: \n', JSON.stringify(res.body));
         done();
       });
   });
