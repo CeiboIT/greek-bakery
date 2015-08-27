@@ -67,7 +67,7 @@ operations.getDetail = function (machineId) {
                                 Maintance.find().exec()
                                     .then(function (maintances) {
                                         maintances.forEach(function (maintance) {
-                                            if (maintance.IdMaintance == aft.IdMaintanceAfter) {
+                                            if (maintance.IdMaintance === aft.IdMaintanceAfter) {
                                                 aft.IdMaintanceAfter = maintance;
                                             }
                                         })
@@ -92,7 +92,7 @@ operations.getDetail = function (machineId) {
                                 Maintance.find().exec()
                                     .then(function (maintances) {
                                         maintances.forEach(function (maintance) {
-                                            if (maintance.IdMaintance == pr.IdMaintance) {
+                                            if (maintance.IdMaintance === pr.IdMaintance) {
                                                 pr.IdMaintance = maintance;
                                             }
                                         })
