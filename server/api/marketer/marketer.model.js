@@ -4,9 +4,9 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var marketer = new Schema({
-	'IDMarketer': { type: Number, required: true, unique: true },
+	'IDMarketer': { type: String, required: true, unique: true },
 	'IDMarketer1': Number,
-	'IDMarketerCategory': { type: Schema.Types.Number, ref: 'MarketerCategory' },
+	'IDMarketerCategory': { type: Schema.Types.String, ref: 'MarketerCategory' },
 	'CompanyName': String,
 	'AccountableSurName': String,
 	'AccountableName': String,
