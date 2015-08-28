@@ -22,28 +22,32 @@ function populate (marketer) {
 }
 
 operations.getStoreControlByMarketer = function (marketerId) {
-    console.log('Store Control for ' + marketerId);
-    return StoreControl.find({'IdMarketer': marketerId}).exec();
+    return StoreControl.find({'IDMarketer': marketerId}).exec();
 };
 
 operations.getSortSuplierByMarketer = function (marketerId) {
-    console.log('Sort Suplier for ' + machineId);
-    return SortSuplier.find({'IdMarketer': marketerId}).exec();
+    return SortSuplier.find({'IDMarketer': marketerId}).exec();
 };
 
 operations.getStoreSaleByMarketer = function (marketerId) {
-    console.log('Store Sale for ' + marketerId);
-    return StoreSale.find({'IdMarketer': marketerId}).exec();
+    return StoreSale.find({'IDMarketer': marketerId}).exec();
 };
 
 operations.getSalesDateByMarketer = function (marketerId) {
-    console.log('Sales Date for ' + marketerId);
-    return salesDate.find({'IdMarketer': marketerId}).exec();
+    return SalesDate.find({'IDMarketer': marketerId}).exec();
 };
 
 operations.getDromologioPelatesByMarketer = function (marketerId) {
-    console.log('Dromologio Pelates for ' + marketerId);
-    return dromologioPelates.find({'IdMarketer': marketerId}).exec();
+    return DromologioPelates.find({'IDMarketer': marketerId}).exec()
+        .then(function (dromologioPelates) {
+            var dromologioPelatesObjects = [];
+            dromologioPelates.forEach(function (dromologioPelate) {
+                var dromologioPelateObject = dromologioPelate.toObject();
+                dromologioPelateObject.IDDromologio = Dromologio.find({'IDDromologio': dromologioPelate.IDDromologio});
+                dromologioPelatesObjects.push(dromologioPelateObject);
+            });
+            return dromologioPelatesObjects;
+        })
 };
 
 operations.getDetail = function (marketerId) {
@@ -58,7 +62,6 @@ operations.getDetail = function (marketerId) {
             // add Store Controls to Marketer
             return operations.getStoreControlByMarketer(marketer.IDMarketer)
                 .then(function (storeControls) {
-                    console.log('adding store controls');
                     marketerObject.storeControl = storeControls;
                     //console.log(marketerObject);
                     return marketerObject;
@@ -68,7 +71,6 @@ operations.getDetail = function (marketerId) {
                 .then(function() {
                     return operations.getSortSuplierByMarketer(marketer.IDMarketer)
                         .then(function (sortSupliers) {
-                            console.log('adding sort supliers');
                             marketerObject.sortSupliers = sortSupliers;
                             //console.log(marketerObject);
                             return marketerObject;
@@ -79,7 +81,6 @@ operations.getDetail = function (marketerId) {
                 .then(function() {
                     return operations.getStoreSaleByMarketer(marketer.IDMarketer)
                         .then(function (storeSales) {
-                            console.log('adding store sales');
                             marketerObject.storeSales = storeSales;
                             //console.log(marketerObject);
                             return marketerObject;
@@ -90,7 +91,6 @@ operations.getDetail = function (marketerId) {
                 .then(function() {
                     return operations.getSalesDateByMarketer(marketer.IDMarketer)
                         .then(function (salesDates) {
-                            console.log('adding sales dates');
                             marketerObject.salesDates = salesDates;
                             //console.log(marketerObject);
                             return marketerObject;
@@ -101,7 +101,6 @@ operations.getDetail = function (marketerId) {
                 .then(function() {
                     return operations.getDromologioPelatesByMarketer(marketer.IDMarketer)
                         .then(function (dromologioPelates) {
-                            console.log('adding dromologio pelates');
                             marketerObject.dromologioPelates = dromologioPelates;
                             //console.log(marketerObject);
                             return marketerObject;
@@ -112,7 +111,6 @@ operations.getDetail = function (marketerId) {
                 .then(function () {
                     return populate(marketerObject)
                         .then(function (populatedMarketer) {
-                            console.log('adding category');
                             return populatedMarketer;
                         });
                 });
