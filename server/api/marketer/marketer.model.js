@@ -5,7 +5,7 @@ var Schema = mongoose.Schema;
 
 var marketer = new Schema({
 	'IDMarketer': { type: String, required: true, unique: true },
-	'IDMarketer1': Number,
+	'IDMarketer1': String,
 	'IDMarketerCategory': { type: Schema.Types.String, ref: 'MarketerCategory' },
 	'CompanyName': String,
 	'AccountableSurName': String,

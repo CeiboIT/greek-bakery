@@ -28,6 +28,11 @@ angular.module('bakeryApp')
                 name: 'Machine',
                 resource: 'machine',
                 state: 'machine'
+            },
+            {
+                name: 'Marketer',
+                resource: 'marketer',
+                state: 'marketer'
             }
         ];
 
