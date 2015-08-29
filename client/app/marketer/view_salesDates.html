@@ -1,1 +1,17 @@
-view_salesDates.html
+<table class="table">
+<strong>Sales Dates</strong>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Date</th>
+            <th>Print</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="material in viewController.item.maintanceAft">
+            <td>{{material.IDSalesDate}}</td>
+            <td>{{material.SalesDate}}</td>
+            <td>{{material.SalesPrint}}</td>
+        </tr>
+    </thead>
+</table>

@@ -1,1 +1,31 @@
-view_storeSales.html
+<table class="table">
+<strong>Store Sales</strong>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Date</th>
+            <th>Parastatiko</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Returns</th>
+<!--
+            <th>IDSort</th>
+            <th>IDNotEnough</th>
+-->
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="material in viewController.item.maintanceAft">
+            <td>{{material.IDStoreSales}}</td>
+            <td>{{material.Date}}</td>
+            <td>{{material.Parastatiko}}</td>
+            <td>{{material.Price}}</td>
+            <td>{{material.Quantity}}</td>
+            <td>{{material.Returns}}</td>
+<!--
+            <td>{{material.IDSort}}</td>
+            <td>{{material.IDNotEnough}}</td>
+-->
+        </tr>
+    </thead>
+</table>

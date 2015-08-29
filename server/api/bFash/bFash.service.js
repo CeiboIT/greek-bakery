@@ -16,7 +16,6 @@ function populate (bFash) {
 }
 
 operations.getMaterialsByFash = function (fashId) {
-    console.log('Material for ' + fashId);
     return BFashMaterials.find({'IDB_FASH': fashId}).exec();
 };
 
@@ -31,14 +30,12 @@ operations.getDetail = function (fashId) {
 
             return operations.getMaterialsByFash(bFash.IDB_FASH)
                 .then(function (materials) {
-                    console.log('adding materials');
                     bFashObject.materials = materials;
                     return bFashObject;
                 })
                 .then(function () {
                     return populate(bFashObject)
                         .then(function (populatedFash) {
-                            console.log('adding MesurmentUnit');
                             return populatedFash;
                         });
                 });
