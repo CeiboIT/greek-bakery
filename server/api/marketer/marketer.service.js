@@ -111,7 +111,7 @@ operations.getDetail = function (marketerId) {
                 .then(function () {
                     return populate(marketerObject)
                         .then(function (populatedMarketer) {
-                            console.log(populatedMarketer);
+                            //console.log(populatedMarketer);
                             return populatedMarketer;
                         });
                 });
