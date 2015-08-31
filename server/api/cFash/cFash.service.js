@@ -1,59 +1,25 @@
 'use strict';
 
 var CFash = require('./cFash.model');
+var IDCategory = require('../sort/sortCategory.model');
+var IDSortSubCategory = require('../sort/sortSubCategory.model');
+var MesurmentUnit = require('../mesurment/mesurment.model');
+var IDOperation = require('../plant/plantPartsSectionsOperations.model');
 var CFashMaterials = require('./cFashMaterials.model');
 var CFashMaterialsYS = require('./cFashMaterialsYS.model');
-var MesurmentUnit = require('../mesurment/mesurment.model');
+var IDSort = require('../sort/sort.model');
 var operations = {};
 
-function populate (cFash) {
-    return MesurmentUnit.findOne().exec()
-            .then(function (mesurmentUnit) {
-                cFash.mesurmentUnit = mesurmentUnit;
-                return cFash;
-            }, function (error) {
-                console.error(error);
-            });
+operations.getAll = function () {
+    return CFash.find()
+        .populate('IDCategory IDSortSubCategory IDMUnit IDOperation materials.IDSort materialsYS.IDSort materialsYS.IDOperation')
+        .lean().exec();
 }
 
-operations.getMaterialsByFash = function (fashId) {
-    return CFashMaterials.find({'IDC_FASH': fashId}).exec();
-};
-
-operations.getMaterialsYSByFash = function (fashId) {
-    return CFashMaterialsYS.find({'IDC_FASH': fashId}).exec();
-};
-
-operations.getDetail = function (fashId) {
-    return CFash.findById(fashId)
-        .then(function (cFash) {
-            var cFashObject = cFash.toObject();
-
-            if (!cFash) {
-                return null;
-            }
-
-            return operations.getMaterialsByFash(cFash.IDC_FASH)
-                .then(function (materials) {
-                    cFashObject.materials = materials;
-                    //console.log(cFashObject);
-                    return cFashObject;
-                })
-                .then(function() {
-                    return operations.getMaterialsYSByFash(cFash.IDC_FASH)
-                        .then(function (materialsYS) {
-                            cFashObject.materialsYS = materialsYS;
-                            //console.log(cFashObject);
-                            return cFashObject;
-                        })
-                })
-                .then(function () {
-                    return populate(cFashObject)
-                        .then(function (populatedFash) {
-                            return populatedFash;
-                        });
-                });
-        });
+operations.getDetail = function (cFashId) {
+    return CFash.findById(cFashId)
+        .populate('IDCategory IDSortSubCategory IDMUnit IDOperation materials.IDSort materialsYS.IDSort materialsYS.IDOperation')
+        .lean().exec();
 }
 
 module.exports = operations;

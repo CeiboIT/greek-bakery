@@ -4,11 +4,11 @@ var should = require('should');
 var app = require('../../app');
 var request = require('supertest');
 
-describe('GET /api/aFash', function() {
+describe('GET /api/raw', function() {
 
-  it('should respond with JSON array of aFashes, populated', function(done) {
+  it('should respond with JSON array of Raw, populated', function(done) {
     request(app)
-      .get('/api/aFash')
+      .get('/api/raw')
       .expect(200)
       .expect('Content-Type', /json/)
       .end(function(err, res) {
@@ -16,6 +16,7 @@ describe('GET /api/aFash', function() {
             return done(err);
         }
         res.body.should.be.instanceof(Array);
+        // console.log(res.body[0]);
         done();
       });
   });
