@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var machineDamage = new Schema({
-	'IdMachineDamage': { type: Number, required: true, unique: true },
+	'IdMachineDamage': { type: String, required: true, unique: true },
 	'IdMachine': { type: Schema.Types.String, ref: 'Machine' },
 	'DamageDate': Date,
 	'Damage': String,

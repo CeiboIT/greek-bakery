@@ -1,0 +1,19 @@
+<table class="table">
+<strong>Maintance Pr</strong>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Maintance</th>
+            <th>text1</th>
+            <th>Main Frequency</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="material in viewController.item.maintancePr">
+            <td>{{material.IdMachineMaintancePr}}</td>
+            <td>{{material.IdMaintance.Maintance}}</td>
+            <td>{{material.text1}}</td>
+            <td>{{material.MMainFrequency}}</td>
+        </tr>
+    </thead>
+</table>

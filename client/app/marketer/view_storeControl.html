@@ -1,0 +1,19 @@
+<table class="table">
+<strong>Store Control</strong>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Date</th>
+            <th>NoApod</th>
+            <th>Incam</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="material in viewController.item.storeControl">
+            <td>{{material.IDStoreControl}}</td>
+            <td>{{material.Date}}</td>
+            <td>{{material.NoApod}}</td>
+            <td>{{material.Incam}}</td>
+        </tr>
+    </thead>
+</table>

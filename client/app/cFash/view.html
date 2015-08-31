@@ -1,0 +1,69 @@
+<div class="modal-header" >
+    <h4 class="modal-title">CFash</h4>
+</div>
+<div class="modal-body">
+    <div class="container-fluid">
+        <ul>
+            <li><strong>Id</strong>: {{viewController.item.IDC_FASH}} </li>
+            <li><strong>Fash</strong>: {{viewController.item.C_FASH}} </li>
+            <li><strong>ID Storage</strong>: {{viewController.item.C_FASH_IDStorage}} </li>
+
+<!--
+            <li><strong>Category</strong>: {{viewController.item.IDCategory}} </li>
+            <li><strong>Sort</strong>: {{viewController.item.IDSortSubCategory}} </li>
+            <li><strong>Measurement Unit</strong>: {{viewController.item.IDMUnit}} </li>
+            <li><strong>Operation</strong>: {{viewController.item.IDOperation}} </li>
+-->
+
+            <li><strong>Pw</strong>: {{viewController.item.C_FASHPW}} </li>
+            <li><strong>Yireld</strong>: {{viewController.item.C_FASHYield}} </li>
+            <li><strong>Scrap</strong>: {{viewController.item.C_FASHScrap}} </li>
+            <li><strong>Lezanta</strong>: {{viewController.item.C_FASHLezanta}} </li>
+            <li><strong>Procedure</strong>: {{viewController.item.C_FASHProcedure}} </li>
+            <li><strong>DeprPerKg</strong>: {{viewController.item.DeprPerKg}} </li>
+            <li><strong>GenDamPerKg</strong>: {{viewController.item.GenDamPerKg}} </li>
+            <li><strong>StoresDamKg</strong>: {{viewController.item.StoresDamKg}} </li>
+            <li><strong>SalesmenDamKg</strong>: {{viewController.item.SalesmenDamKg}} </li>
+            <li><strong>CarDamKg</strong>: {{viewController.item.CarDamKg}} </li>
+            <li><strong>PromotionDamKg</strong>: {{viewController.item.PromotionDamKg}} </li>
+            <li><strong>SalesDepreciationKg</strong>: {{viewController.item.SalesDepreciationKg}} </li>
+            <li><strong>SpecificationLocked</strong>: {{viewController.item.SpecificationLocked}} </li>
+            <li><strong>StorageContitions</strong>: {{viewController.item.StorageContitions}} </li>
+            <li><strong>SelfLife</strong>: {{viewController.item.SelfLife}} </li>
+            <li><strong>ConsuptionGroup</strong>: {{viewController.item.ConsuptionGroup}} </li>
+            <li><strong>ServersDamkg</strong>: {{viewController.item.ServersDamkg}} </li>
+            <li><strong>PH</strong>: {{viewController.item.PH}} </li>
+            <li><strong>Aw</strong>: {{viewController.item.Aw}} </li>
+            <li><strong>TPC</strong>: {{viewController.item.TPC}} </li>
+
+            <li><strong>Date start</strong>: {{viewController.item.DateStart}} </li>
+            <li><strong>Date finish</strong>: {{viewController.item.DateFinish}} </li>
+
+<!--
+            <li><strong>Text1</strong>: {{viewController.item.Text1}} </li>
+            <li><strong>Text2</strong>: {{viewController.item.Text2}} </li>
+            <li><strong>Text3</strong>: {{viewController.item.Text3}} </li>
+            <li><strong>No1</strong>: {{viewController.item.No1}} </li>
+            <li><strong>No2</strong>: {{viewController.item.No2}} </li>
+            <li><strong>No3</strong>: {{viewController.item.No3}} </li>
+            <li><strong>Date1</strong>: {{viewController.item.Date1}} </li>
+            <li><strong>Date2</strong>: {{viewController.item.Date2}} </li>
+            <li><strong>Memo1</strong>: {{viewController.item.Memo1}} </li>
+            <li><strong>YesNo1</strong>: {{viewController.item.YesNo1}} </li>
+            <li><strong>YesNo2</strong>: {{viewController.item.YesNo2}} </li>
+-->
+
+            <br>
+            <ng-include src="'app/cFash/view_materials.html'"></ng-include>
+            <ng-include src="'app/cFash/view_materialsYS.html'"></ng-include>
+        </ul>
+    </div>
+</div> <!-- modal body -->
+<div class="modal-footer">
+    <button id="ok_button"
+            type="submit"
+            ng-click="$close()"
+            class="btn btn-success">
+        Close
+    </button>
+</div>

@@ -1,0 +1,34 @@
+<div class="modal-header" >
+    <h4 class="modal-title">Machine</h4>
+</div>
+<div class="modal-body">
+    <div class="container-fluid">
+        <ul>
+            <li><strong>Id</strong>: {{viewController.item.IdMachine}} </li>
+            <li><strong>Machine</strong>: {{viewController.item.Machine}} </li>
+            <li><strong>ID Section</strong>: {{viewController.item.IDSection.Section}} </li>
+            <li><strong>Constraction Date</strong>: {{viewController.item.ConstractionDate}} </li>
+            <li><strong>Constractor</strong>: {{viewController.item.Constractor}} </li>
+            <li><strong>Constractor Telephone</strong>: {{viewController.item.ConstractorTel}} </li>
+            <li><strong>Constractor Fax</strong>: {{viewController.item.ConstractorFax}} </li>
+            <li><strong>Constractor Mail</strong>: {{viewController.item.ConstractorMail}} </li>
+            <li><strong>Reprasantator</strong>: {{viewController.item.Reprasantator}} </li>
+            <li><strong>Reprasantator Contact</strong>: {{viewController.item.ReprasantatorContact}} </li>
+            <li><strong>Reprasantator Telephone</strong>: {{viewController.item.ReprasantatorTel}} </li>
+            <li><strong>Reprasantator Fax</strong>: {{viewController.item.ReprasantatorFax}} </li>
+            <li><strong>Reprasantator Mail</strong>: {{viewController.item.ReprasantatorMail}} </li>
+            <br>
+            <ng-include src="'app/machine/view_damage.html'"></ng-include>
+            <ng-include src="'app/machine/view_maintanceAft.html'"></ng-include>
+            <ng-include src="'app/machine/view_maintancePr.html'"></ng-include>
+        </ul>
+    </div>
+</div> <!-- modal body -->
+<div class="modal-footer">
+    <button id="ok_button"
+            type="submit"
+            ng-click="$close()"
+            class="btn btn-success">
+        Close
+    </button>
+</div>

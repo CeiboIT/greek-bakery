@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var dromologio = new Schema({
-	'IDDromologio': { type: Number, required: true, unique: true },
+	'IDDromologio': { type: String, required: true, unique: true },
 	'Dromologio': String,
 	'Text1': String,
 	'Text2': String,
