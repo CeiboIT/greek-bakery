@@ -11,11 +11,15 @@ var IDSort = require('../sort/sort.model');
 var operations = {};
 
 operations.getAll = function () {
-    return CFash.find().populate('IDCategory IDSortSubCategory IDMUnit IDOperation materials.IDSort materialsYS.IDSort materialsYS.IDOperation').lean().exec();
+    return CFash.find()
+        .populate('IDCategory IDSortSubCategory IDMUnit IDOperation materials.IDSort materialsYS.IDSort materialsYS.IDOperation')
+        .lean().exec();
 }
 
 operations.getDetail = function (cFashId) {
-    return CFash.findById(cFashId).populate('IDCategory IDSortSubCategory IDMUnit IDOperation materials.IDSort materialsYS.IDSort materialsYS.IDOperation').lean().exec()
+    return CFash.findById(cFashId)
+        .populate('IDCategory IDSortSubCategory IDMUnit IDOperation materials.IDSort materialsYS.IDSort materialsYS.IDOperation')
+        .lean().exec();
 }
 
 module.exports = operations;

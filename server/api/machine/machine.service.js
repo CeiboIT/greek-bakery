@@ -20,17 +20,14 @@ function populate (machine) {
 }
 
 operations.getDamageByMachine = function (machineId) {
-    console.log('Damage for ' + machineId);
     return MachineDamage.find({'IdMachine': machineId}).exec();
 };
 
 operations.getMaintanceAftByMachine = function (machineId) {
-    console.log('MaintanceAft for ' + machineId);
     return MachineMaintanceAft.find({'IdMachine': machineId}).exec();
 };
 
 operations.getMaintancePrByMachine = function (machineId) {
-    console.log('MaintancePr for ' + machineId);
     return MachineMaintancePr.find({'IdMachine': machineId}).exec();
 };
 
@@ -45,7 +42,6 @@ operations.getDetail = function (machineId) {
 
             return operations.getDamageByMachine(machine.IdMachine)
                 .then(function (damages) {
-                    console.log('adding damages');
                     machineObject.damages = damages;
                     //console.log(machineObject);
                     return machineObject;
@@ -53,7 +49,6 @@ operations.getDetail = function (machineId) {
                 .then(function() {
                     return operations.getMaintanceAftByMachine(machine.IdMachine)
                         .then(function (maintanceAft) {
-                            console.log('adding maintanceAft');
                             machineObject.maintanceAft = maintanceAft;
                             //console.log(machineObject);
                             return machineObject;
@@ -61,7 +56,6 @@ operations.getDetail = function (machineId) {
 
                         // JOIN MAINTANCEAFT WITH MAINTANCE STRING
                         .then(function (){
-                            console.log('adding maintanceAft > maintance');
                             machineObject.maintanceAft.forEach(function (aft) {
                                 //console.log(aft);
                                 Maintance.find().exec()
@@ -78,7 +72,6 @@ operations.getDetail = function (machineId) {
                 .then(function() {
                     return operations.getMaintancePrByMachine(machine.IdMachine)
                         .then(function (maintancePr) {
-                            console.log('adding maintancePr');
                             machineObject.maintancePr = maintancePr;
                             //console.log(machineObject);
                             return machineObject;
@@ -86,7 +79,6 @@ operations.getDetail = function (machineId) {
 
                         // JOIN MAINTANCEPR WITH MAINTANCE STRING
                         .then(function (){
-                            console.log('adding maintancePr > maintance');
                             machineObject.maintancePr.forEach(function (pr) {
                                 //console.log(pr);
                                 Maintance.find().exec()
@@ -103,7 +95,6 @@ operations.getDetail = function (machineId) {
                 .then(function () {
                     return populate(machineObject)
                         .then(function (populatedMachine) {
-                            console.log('adding IDSection');
                             return populatedMachine;
                         });
                 });

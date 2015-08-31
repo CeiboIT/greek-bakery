@@ -4,9 +4,9 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var dromologioPelates = new Schema({
-	'IDDroml_Pelates': { type: Number, required: true, unique: true },
-	'IDDromologio': { type: Schema.Types.Number, ref: 'Dromologio' },
-	'IDMarketer': { type: Schema.Types.Number, ref: 'Marketer' },
+	'IDDroml_Pelates': { type: String, required: true, unique: true },
+	'IDDromologio': { type: Schema.Types.String, ref: 'Dromologio' },
+	'IDMarketer': { type: Schema.Types.String, ref: 'Marketer' },
 	'Seira': Number,
 	'Text1': String,
 	'Text2': String,

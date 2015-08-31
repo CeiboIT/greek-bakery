@@ -30,6 +30,11 @@ angular.module('bakeryApp')
                 state: 'machine'
             },
             {
+                name: 'Marketer',
+                resource: 'marketer',
+                state: 'marketer'
+            },
+            {
                 name: 'Raws',
                 resource: 'raw',
                 state: 'raw'  

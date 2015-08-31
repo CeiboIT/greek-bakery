@@ -18,6 +18,7 @@ module.exports = function(app) {
   app.use('/api/plant', require('./api/plant'));
   app.use('/api/sort', require('./api/sort'));
   app.use('/api/machine', require('./api/machine'));
+  app.use('/api/marketer', require('./api/marketer'));
   app.use('/api/raw', require('./api/raw'));
 
   // All undefined asset or api routes should return a 404

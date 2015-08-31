@@ -53,11 +53,11 @@
 	    	.withOption('rowCallback', rowCallback);
 
 	    controller.dtColumns = [
-	        DTColumnBuilder.newColumn('A_FASH_IDStorage').withTitle('Id'),
+	        DTColumnBuilder.newColumn('A_FASH_IDStorage').withTitle('IdStorage'),
 	        DTColumnBuilder.newColumn('A_FASH').withTitle('Fash'),
 	        DTColumnBuilder.newColumn('A_FASHProcedure').withTitle('Procedure'),
 	    ];
-     	
+
 	});
 
 }());

@@ -14,8 +14,9 @@ angular.module('bakeryApp', [
   'bFash',
   'cFash',
   'plant',
+  'machine',
+  'marketer',
   'raw',
-  'machine'
 ])
     .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
         $urlRouterProvider
