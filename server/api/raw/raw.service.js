@@ -11,7 +11,7 @@ operations.getAll = function () {
 
 operations.getDetail = function (rawId) {
 
-	return Raw.findById(rawId).populate('IDCompositionDescription IDCategory').exec()
+	return Raw.findById(rawId).populate('IDCompositionDescription IDCategory').lean().exec()
   		.then(function (raw) {
   			return raw;
 	  	});

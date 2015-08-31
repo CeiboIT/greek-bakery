@@ -1,6 +1,7 @@
 'use strict';
 
 var mongoose = require('mongoose');
+var populatePlugin = require('mongoose-power-populate')(mongoose);
 var Schema = mongoose.Schema;
 
 var aFashMaterials = new Schema({
@@ -12,6 +13,15 @@ var aFashMaterials = new Schema({
 	'IDA_FASHLoose': Number,
 	'IDA_FASHRecipe': Boolean,
 	'IDA_FASHDelete': Boolean
+});
+
+aFashMaterials.plugin(populatePlugin, {
+    IDSort: {
+        ref: 'Sort',
+        foreignKey: 'IDSort',
+        localKey: 'IDSort',
+        singular: true
+    }
 });
 
 module.exports = mongoose.model('AFashMaterials', aFashMaterials);

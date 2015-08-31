@@ -1,48 +1,20 @@
 'use strict';
 
 var BFash = require('./bFash.model');
-var BFashMaterials = require('./bFashMaterials.model');
+var IDCategory = require('../sort/sortCategory.model');
+var IDSortSubCategory = require('../sort/sortSubCategory.model');
 var MesurmentUnit = require('../mesurment/mesurment.model');
+var IDOperation = require('../plant/plantPartsSectionsOperations.model');
+var BFashMaterials = require('./bFashMaterials.model');
+var IDSort = require('../sort/sort.model');
 var operations = {};
 
-function populate (bFash) {
-    return MesurmentUnit.findOne().exec()
-            .then(function (mesurmentUnit) {
-                bFash.mesurmentUnit = mesurmentUnit;
-                return bFash;
-            }, function (error) {
-                console.error(error);
-            });
+operations.getAll = function () {
+    return BFash.find().populate('IDCategory IDSortSubCategory IDMUnit IDOperation materials.IDSort').lean().exec();
 }
 
-operations.getMaterialsByFash = function (fashId) {
-    console.log('Material for ' + fashId);
-    return BFashMaterials.find({'IDB_FASH': fashId}).exec();
-};
-
-operations.getDetail = function (fashId) {
-    return BFash.findById(fashId)
-        .then(function (bFash) {
-            var bFashObject = bFash.toObject();
-
-            if (!bFash) {
-                return null;
-            }
-
-            return operations.getMaterialsByFash(bFash.IDB_FASH)
-                .then(function (materials) {
-                    console.log('adding materials');
-                    bFashObject.materials = materials;
-                    return bFashObject;
-                })
-                .then(function () {
-                    return populate(bFashObject)
-                        .then(function (populatedFash) {
-                            console.log('adding MesurmentUnit');
-                            return populatedFash;
-                        });
-                });
-        });
+operations.getDetail = function (bFashId) {
+    return BFash.findById(bFashId).populate('IDCategory IDSortSubCategory IDMUnit IDOperation materials.IDSort').lean().exec()
 }
 
 module.exports = operations;
