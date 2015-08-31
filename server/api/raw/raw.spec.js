@@ -16,7 +16,7 @@ describe('GET /api/raw', function() {
             return done(err);
         }
         res.body.should.be.instanceof(Array);
-        console.log(res.body[0]);
+        // console.log(res.body[0]);
         done();
       });
   });

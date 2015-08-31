@@ -46,8 +46,13 @@ raw.plugin(populatePlugin, {
       ref: 'RawCompositionDescription',
       foreignKey: 'IDCompositionDescription',
       localKey: 'IDCompositionDescription',
-      lean: true,
       singular: true
+    },
+    IDCategory: {
+    	ref: 'SortCategory',
+    	foreignKey: 'IDCategory',
+    	localKey: 'IDCategory',
+        singular: true
     }
 });
 

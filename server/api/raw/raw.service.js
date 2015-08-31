@@ -1,10 +1,11 @@
 'use strict';
 
 var Raw = require('./raw.model');
+var RawCompositionDescription = require('./rawCompositionDescription.model');
 var operations = {};
 
 operations.getAll = function () {
-	return Raw.find().exec();
+	return Raw.find().populate('IDCompositionDescription IDCategory').lean().exec();
 }
 
 operations.getDetail = function (rawId) {

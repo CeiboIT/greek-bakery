@@ -3,7 +3,7 @@
 var rawService = require('./raw.service');
 
 exports.index = function(req, res) {
-	rawService
+	rawService.getAll()
     	.then(function (raws) {
         	return res.status(200).json(raws);
 	    }, function (err) {
