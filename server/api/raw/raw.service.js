@@ -2,6 +2,7 @@
 
 var Raw = require('./raw.model');
 var RawCompositionDescription = require('./rawCompositionDescription.model');
+var IDCategory = require('../sort/sortCategory.model');
 var operations = {};
 
 operations.getAll = function () {
@@ -9,8 +10,8 @@ operations.getAll = function () {
 }
 
 operations.getDetail = function (rawId) {
-	
-	return Raw.findById(rawId).exec()
+
+	return Raw.findById(rawId).populate('IDCompositionDescription IDCategory').exec()
   		.then(function (raw) {
   			return raw;
 	  	});

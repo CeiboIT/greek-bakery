@@ -1,6 +1,7 @@
 'use strict';
 
 var mongoose = require('mongoose');
+var populatePlugin = require('mongoose-power-populate')(mongoose);
 var Schema = mongoose.Schema;
 
 var aFASH = new Schema({
@@ -30,7 +31,35 @@ var aFASH = new Schema({
 	'Date2': Date,
 	'Memo1': String,
 	'YesNo1': Boolean,
-	'YesNo2': Boolean
+	'YesNo2': Boolean,
+	'materials': Array
+});
+
+aFASH.plugin(populatePlugin, {
+    IDSortSubCategory: {
+    	ref: 'SortSubCategory',
+    	foreignKey: 'IDSortSubCategory',
+    	localKey: 'IDSortSubCategory',
+        singular: true
+    },
+    IDMUnit: {
+    	ref: 'MesurmentUnit',
+    	foreignKey: 'IDMUnit',
+    	localKey: 'IDMUnit',
+        singular: true
+    },
+    IDOperation: {
+    	ref: 'PlantPartsSectionsOperations',
+    	foreignKey: 'IDOperation',
+    	localKey: 'IDOperation',
+        singular: true
+    },
+    materials: {
+    	ref: 'AFashMaterials',
+    	foreignKey: 'IDA_FASH',
+    	localKey: 'IDA_FASH',
+        singular: false
+    },
 });
 
 module.exports = mongoose.model('AFash', aFASH);
