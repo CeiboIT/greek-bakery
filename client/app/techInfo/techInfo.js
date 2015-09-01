@@ -24,9 +24,9 @@
         });
 
         controller.dtColumns = [
-            DTColumnBuilder.newColumn('TechInfo').withTitle('TechInfo'),
-            DTColumnBuilder.newColumn('Choice').withTitle('Choice'),
-            DTColumnBuilder.newColumn('IDCategory.Category').withTitle('Sort category')
+            DTColumnBuilder.newColumn('IdTecInf').withTitle('IdTecInf'),
+            DTColumnBuilder.newColumn('Refresh').withTitle('Refresh'),
+            DTColumnBuilder.newColumn('StorageContitions').withTitle('StorageContitions')
         ];
 
     });
