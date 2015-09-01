@@ -24,6 +24,7 @@
         });
 
         controller.dtColumns = [
+            DTColumnBuilder.newColumn('IdParapono').withTitle('IdParapono'),
             DTColumnBuilder.newColumn('Parapono').withTitle('Parapono')
         ];
 
