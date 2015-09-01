@@ -14,10 +14,7 @@ operations.getAll = function () {
 operations.getDetail = function (paraponoId) {
     return Parapono.findById(paraponoId)
         .populate('IdParaponoCat paraponoSort')
-        .lean().exec()
-            .then(function (p) {
-                console.log(p);
-            })
+        .lean().exec();
 }
 
 module.exports = operations;

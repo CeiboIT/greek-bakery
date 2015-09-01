@@ -43,6 +43,11 @@ angular.module('bakeryApp')
                 name: 'Parapono',
                 resource: 'parapono',
                 state: 'parapono'
+            },
+            {
+                name: 'Evaluation',
+                resource: 'evaluation',
+                state: 'evaluation'
             }
         ];
 
