@@ -24,9 +24,9 @@
         });
 
         controller.dtColumns = [
-            DTColumnBuilder.newColumn('Worker').withTitle('Worker'),
-            DTColumnBuilder.newColumn('Choice').withTitle('Choice'),
-            DTColumnBuilder.newColumn('IDCategory.Category').withTitle('Sort category')
+            DTColumnBuilder.newColumn('IdWorker').withTitle('IdWorker'),
+            DTColumnBuilder.newColumn('Name').withTitle('Name'),
+            DTColumnBuilder.newColumn('DateBirth').withTitle('DateBirth'),
         ];
 
     });

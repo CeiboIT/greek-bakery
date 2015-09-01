@@ -1,7 +1,7 @@
 'use strict';
 
 var Worker = require('./worker.model');
-var WorkerKnowl = require('./WorkerKnowl.model');
+var WorkersKnowl = require('./WorkerKnowl.model');
 var operations = {};
 
 operations.getAll = function () {
