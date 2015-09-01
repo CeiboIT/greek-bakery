@@ -24,9 +24,8 @@
         });
 
         controller.dtColumns = [
-            DTColumnBuilder.newColumn('CFash').withTitle('CFash'),
-            DTColumnBuilder.newColumn('Choice').withTitle('Choice'),
-            DTColumnBuilder.newColumn('IDCategory.Category').withTitle('Sort category')
+            DTColumnBuilder.newColumn('C_FASH_IDStorage').withTitle('C_FASH_IDStorage'),
+            DTColumnBuilder.newColumn('C_FASH').withTitle('C_FASH')
         ];
 
     });
