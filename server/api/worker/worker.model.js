@@ -1,6 +1,7 @@
 'use strict';
 
 var mongoose = require('mongoose');
+var populatePlugin = require('mongoose-power-populate')(mongoose);
 var Schema = mongoose.Schema;
 
 var worker = new Schema({
@@ -30,6 +31,15 @@ var worker = new Schema({
 	'ReasonRetirement': String,
 	'Remarks': String,
 	'Print': Boolean
+});
+
+worker.plugin(populatePlugin, {
+    IdWorkersKnowl: {
+    	ref: 'WorkesKnowl',
+    	foreignKey: 'IdWorkersKnowl',
+    	localKey: 'IdWorkersKnowl',
+        singular: true
+    }
 });
 
 module.exports = mongoose.model('Worker', worker);

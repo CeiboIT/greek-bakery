@@ -48,6 +48,21 @@ angular.module('bakeryApp')
                 name: 'Evaluation',
                 resource: 'evaluation',
                 state: 'evaluation'
+            },
+            {
+                name: 'Menu',
+                resource: 'menu',
+                state: 'menu'
+            },
+            {
+                name: 'TechInfo',
+                resource: 'techInfo',
+                state: 'techInfo'
+            },
+            {
+                name: 'Worker',
+                resource: 'worker',
+                state: 'worker'
             }
         ];
 
