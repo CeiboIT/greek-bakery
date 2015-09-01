@@ -25,6 +25,8 @@
 
         controller.dtColumns = [
             DTColumnBuilder.newColumn('IDSupEvaluation').withTitle('IDSupEvaluation'),
+            DTColumnBuilder.newColumn('Year').withTitle('Year'),
+            DTColumnBuilder.newColumn('Prices').withTitle('Prices'),
         ];
 
     });
