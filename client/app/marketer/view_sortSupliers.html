@@ -3,6 +3,7 @@
     <thead>
         <tr>
             <th>Id</th>
+            <th>Sort</th>
             <th>Basic</th>
             <th>Date</th>
             <th>Price</th>
@@ -23,7 +24,8 @@
     </thead>
     <tbody>
         <tr ng-repeat="material in viewController.item.sortSupliers">
-            <td>{{material.IDSort}}</td>
+            <td>{{material.IDAuto}}</td>
+            <td>{{material.IDSort.SortDescr}}</td>
             <td>{{material.Basic}}</td>
             <td>{{material.Date}}</td>
             <td>{{material.Price}}</td>

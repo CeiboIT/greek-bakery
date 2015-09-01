@@ -24,9 +24,9 @@
         });
 
         controller.dtColumns = [
-            DTColumnBuilder.newColumn('Marketer').withTitle('Marketer'),
-            DTColumnBuilder.newColumn('Choice').withTitle('Choice'),
-            DTColumnBuilder.newColumn('IDCategory.Category').withTitle('Sort category')
+            DTColumnBuilder.newColumn('IDMarketer').withTitle('IDMarketer'),
+            DTColumnBuilder.newColumn('CompanyName').withTitle('CompanyName'),
+            DTColumnBuilder.newColumn('AccountableSurName').withTitle('AccountableSurName')
         ];
 
     });
