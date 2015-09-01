@@ -24,9 +24,9 @@
         });
 
         controller.dtColumns = [
+            DTColumnBuilder.newColumn('IdMachine').withTitle('IdMachine'),
             DTColumnBuilder.newColumn('Machine').withTitle('Machine'),
-            DTColumnBuilder.newColumn('Choice').withTitle('Choice'),
-            DTColumnBuilder.newColumn('IDCategory.Category').withTitle('Sort category')
+            DTColumnBuilder.newColumn('ConstractionDate').withTitle('ConstractionDate')
         ];
 
     });
