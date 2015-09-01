@@ -4,13 +4,12 @@ var CFash = require('./cFash.model');
 var cFashService = require('./cFash.service');
 
 exports.index = function(req, res) {
-    CFash.find()
-        .exec()
-            .then(function (fashes) {
-                return res.status(200).json(fashes);
-            }, function (err) {
-                handleError(res, err);
-            });
+    cFashService.getAll()
+        .then(function (fashes) {
+            return res.status(200).json(fashes);
+        }, function (err) {
+            handleError(res, err);
+        });
 };
 
 exports.detail = function(req, res) {

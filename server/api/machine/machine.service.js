@@ -17,10 +17,7 @@ operations.getAll = function () {
 operations.getDetail = function (machineId) {
     return Machine.findById(machineId)
         .populate('IDSection damage maintanceAft.IdMaintanceAfter maintancePr.IdMaintance')
-        .lean().exec()
-            .then(function (populated) {
-                console.log(populated);
-            })
+        .lean().exec();
 }
 
 module.exports = operations;
