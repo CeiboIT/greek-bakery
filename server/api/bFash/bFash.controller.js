@@ -1,6 +1,5 @@
 'use strict';
 
-var BFash = require('./bFash.model');
 var bFashService = require('./bFash.service');
 
 exports.index = function(req, res) {

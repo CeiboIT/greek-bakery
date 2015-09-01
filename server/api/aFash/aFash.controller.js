@@ -1,6 +1,5 @@
 'use strict';
 
-var AFash = require('./aFash.model');
 var aFashService = require('./aFash.service');
 
 exports.index = function(req, res) {

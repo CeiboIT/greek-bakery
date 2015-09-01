@@ -1,6 +1,5 @@
 'use strict';
 
-var Marketer = require('./marketer.model');
 var marketerService = require('./marketer.service');
 
 exports.index = function(req, res) {

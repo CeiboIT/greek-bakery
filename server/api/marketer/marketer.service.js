@@ -20,12 +20,7 @@ operations.getAll = function () {
 operations.getDetail = function (marketerId) {
     return Marketer.findById(marketerId)
         .populate('IDMarketerCategory storeControl sortSupliers.IDSort storeSales.IDSort salesDates dromologioPelates.IDDromologio')
-        .lean().exec()
-            .then (function(populate) {
-                console.log(populate.storeSales);
-            })
+        .lean().exec();
 }
-
-//storeControl / storeSales
 
 module.exports = operations;

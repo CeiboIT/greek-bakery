@@ -1,20 +1,20 @@
 'use strict';
 
-var machineService = require('./machine.service');
+var paraponoService = require('./parapono.service');
 
 exports.index = function(req, res) {
-    machineService.getAll()
-        .then(function (machines) {
-            return res.status(200).json(machines);
+    paraponoService.getAll()
+        .then(function (paraponos) {
+            return res.status(200).json(paraponos);
         }, function (err) {
             handleError(res, err);
         });
 };
 
 exports.detail = function(req, res) {
-    machineService.getDetail(req.params.id)
-        .then(function (machineDetail) {
-            res.json(machineDetail);
+    paraponoService.getDetail(req.params.id)
+        .then(function (paraponoDetail) {
+            res.json(paraponoDetail);
         }, function (err) {
             console.error(err);
             handleError(res, err);
