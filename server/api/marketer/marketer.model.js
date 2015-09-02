@@ -1,12 +1,13 @@
 'use strict';
 
 var mongoose = require('mongoose');
+var populatePlugin = require('mongoose-power-populate')(mongoose);
 var Schema = mongoose.Schema;
 
 var marketer = new Schema({
-	'IDMarketer': { type: Number, required: true, unique: true },
-	'IDMarketer1': Number,
-	'IDMarketerCategory': { type: Schema.Types.Number, ref: 'MarketerCategory' },
+	'IDMarketer': { type: String, required: true, unique: true },
+	'IDMarketer1': String,
+	'IDMarketerCategory': { type: Schema.Types.String, ref: 'MarketerCategory' },
 	'CompanyName': String,
 	'AccountableSurName': String,
 	'AccountableName': String,
@@ -31,7 +32,51 @@ var marketer = new Schema({
 	'Date2': Date,
 	'Memo1': String,
 	'YesNo1': Boolean,
-	'YesNo2': Boolean
+	'YesNo2': Boolean,
+	'storeControl': Array,
+	'sortSupliers': Array,
+	'storeSales': Array,
+	'salesDates': Array,
+	'dromologioPelates': Array
+});
+
+marketer.plugin(populatePlugin, {
+    IDMarketerCategory: {
+    	ref: 'MarketerCategory',
+    	foreignKey: 'IDMarketerCategory',
+    	localKey: 'IDMarketerCategory',
+        singular: true
+    },
+    storeControl: {
+    	ref: 'StoreControl',
+    	foreignKey: 'IDMarketer',
+    	localKey: 'IDMarketer',
+        singular: false
+    },
+    sortSupliers: {
+    	ref: 'SortSuplier',
+    	foreignKey: 'IDMarketer',
+    	localKey: 'IDMarketer',
+        singular: false
+    },
+    storeSales: {
+    	ref: 'StoreSale',
+    	foreignKey: 'IDMarketer',
+    	localKey: 'IDMarketer',
+        singular: false
+    },
+    salesDates: {
+    	ref: 'SalesDate',
+    	foreignKey: 'IDMarketer',
+    	localKey: 'IDMarketer',
+        singular: false
+    },
+    dromologioPelates: {
+    	ref: 'DromologioPelates',
+    	foreignKey: 'IDMarketer',
+    	localKey: 'IDMarketer',
+        singular: false
+    }
 });
 
 module.exports = mongoose.model('Marketer', marketer);

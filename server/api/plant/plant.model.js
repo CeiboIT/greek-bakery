@@ -6,7 +6,7 @@ var Schema = mongoose.Schema;
 // tbPlant table
 
 var plant = new Schema({
-	'IDplant': { type: Number, required: true, unique: true },
+	'IDplant': { type: String, required: true, unique: true },
 	'PlantDescription': String,
 	'EAN': String,
 	'Text1': String,
@@ -19,13 +19,5 @@ var plant = new Schema({
 	'Date2': Date,
 	'Date3': Date
 });
-
-// plant.virtual('IDplant').get(function () {
-// 	return this._id;
-// });
-
-// plant.virtual('IDplant').set(function (newId) {
-// 	this._id = newId;
-// });
 
 module.exports = mongoose.model('Plant', plant);

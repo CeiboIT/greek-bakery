@@ -1,10 +1,11 @@
 'use strict';
 
 var mongoose = require('mongoose');
+var populatePlugin = require('mongoose-power-populate')(mongoose);
 var Schema = mongoose.Schema;
 
 var cFASH = new Schema({
-	'IDC_FASH': { type: Number, required: true, unique: true },
+	'IDC_FASH': { type: String, required: true, unique: true },
 	'C_FASH_IDStorage': String,
 	'C_FASH': String,
 	'C_FASHBasic': Boolean,
@@ -12,7 +13,7 @@ var cFASH = new Schema({
 	'DateFinish': Date,
 	'IDCategory': { type: Schema.Types.String, ref: 'SortCategory' },
 	'IDSortSubCategory': { type: Schema.Types.String, ref: 'SortSubCategory' },
-	'IDMUnit': { type: Schema.Types.Number, ref: 'MesurmentUnit' },
+	'IDMUnit': { type: Schema.Types.String, ref: 'MesurmentUnit' },
 	'C_FASHPW': Number,
 	'IDOperation': { type: Schema.Types.String, ref: 'PlantPartsSectionsOperations' },
 	'C_FASHYield': Number,
@@ -49,7 +50,42 @@ var cFASH = new Schema({
 	'Date2': Date,
 	'Memo1': String,
 	'YesNo1': Boolean,
-	'YesNo2': Boolean
+	'YesNo2': Boolean,
+    'materials': Array,
+    'materialsYS': Array
+});
+
+cFASH.plugin(populatePlugin, {
+    IDSortSubCategory: {
+    	ref: 'SortSubCategory',
+    	foreignKey: 'IDSortSubCategory',
+    	localKey: 'IDSortSubCategory',
+        singular: true
+    },
+    IDMUnit: {
+    	ref: 'MesurmentUnit',
+    	foreignKey: 'IDMUnit',
+    	localKey: 'IDMUnit',
+        singular: true
+    },
+    IDOperation: {
+    	ref: 'PlantPartsSectionsOperations',
+    	foreignKey: 'IDOperation',
+    	localKey: 'IDOperation',
+        singular: true
+    },
+    materials: {
+    	ref: 'CFashMaterials',
+    	foreignKey: 'IDC_FASH',
+    	localKey: 'IDC_FASH',
+        singular: false
+    },
+    materialsYS: {
+    	ref: 'CFashMaterialsYS',
+    	foreignKey: 'IDC_FASH',
+    	localKey: 'IDC_FASH',
+        singular: false
+    }
 });
 
 module.exports = mongoose.model('CFash', cFASH);

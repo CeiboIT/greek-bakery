@@ -9,7 +9,19 @@ angular.module('bakeryApp', [
   'datatables',
   'restangular',
   'restServices',
-  'aFash'
+  'table',
+  'aFash',
+  'bFash',
+  'cFash',
+  'plant',
+  'machine',
+  'marketer',
+  'raw',
+  'parapono',
+  'evaluation',
+  'menu',
+  'techInfo',
+  'worker',
 ])
     .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
         $urlRouterProvider

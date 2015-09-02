@@ -1,0 +1,36 @@
+<div class="modal-header" >
+    <h4 class="modal-title">Evaluation</h4>
+</div>
+<div class="modal-body">
+    <div class="container-fluid">
+        <ul>
+            <li><strong>IDSupEvaluation</strong>: {{viewController.item.IDSupEvaluation}} </li>
+            <li><strong>Marketer ID</strong>: {{viewController.item.IDMarketer.IDMarketer}} </li>
+            <li><strong>Marketer Company Name</strong>: {{viewController.item.IDMarketer.CompanyName}} </li>
+            <li><strong>Part ID</strong>: {{viewController.item.IDPart.IDplant}} </li>
+            <li><strong>Part Description</strong>: {{viewController.item.IDPart.PlantDescription}} </li>
+            <li><strong>Year</strong>: {{viewController.item.Year}} </li>
+            <li><strong>QualPrServ</strong>: {{viewController.item.QualPrServ}} </li>
+            <li><strong>SpecifPrServ</strong>: {{viewController.item.SpecifPrServ}} </li>
+            <li><strong>SystemInternalQC</strong>: {{viewController.item.SystemInternalQC}} </li>
+            <li><strong>ProblemSupport</strong>: {{viewController.item.ProblemSupport}} </li>
+            <li><strong>Prices</strong>: {{viewController.item.Prices}} </li>
+            <li><strong>TimeResponse</strong>: {{viewController.item.TimeResponse}} </li>
+            <li><strong>Consistensy</strong>: {{viewController.item.Consistensy}} </li>
+            <li><strong>Flexibility</strong>: {{viewController.item.Flexibility}} </li>
+            <li><strong>History</strong>: {{viewController.item.History}} </li>
+            <li><strong>BeEvaluate</strong>: {{viewController.item.BeEvaluate}} </li>
+
+            <br>
+            <ng-include src="'app/aFash/view_materials.html'"></ng-include>
+        </ul>
+    </div>
+</div> <!-- modal body -->
+<div class="modal-footer">
+    <button id="ok_button"
+            type="submit"
+            ng-click="$close()"
+            class="btn btn-success">
+        Close
+    </button>
+</div>

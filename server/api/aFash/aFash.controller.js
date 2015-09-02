@@ -1,16 +1,14 @@
 'use strict';
 
-var AFash = require('./aFash.model');
 var aFashService = require('./aFash.service');
 
 exports.index = function(req, res) {
-	AFash.find()
-	  	.exec()
-	    	.then(function (fashes) {
-	        	return res.status(200).json(fashes);
-		    }, function (err) {
-		    	handleError(res, err); 
-		    });
+	aFashService.getAll()
+    	.then(function (fashes) {
+        	return res.status(200).json(fashes);
+	    }, function (err) {
+	    	handleError(res, err);
+	    });
 };
 
 exports.detail = function(req, res) {
@@ -19,7 +17,7 @@ exports.detail = function(req, res) {
 			res.json(aFashDetail);
 		}, function (err) {
 	  		console.error(err);
-	    	handleError(res, err); 
+	    	handleError(res, err);
 	    });
 };
 

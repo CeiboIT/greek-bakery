@@ -21,26 +21,3 @@ describe('GET /api/aFash', function() {
   });
 
 });
-
-describe('GET /api/aFash/:id', function() {
-  var aFash; 
-  request(app).get('/api/aFash').end(function (err, res) {
-    aFash = res.body[0];
-  });
-
-  it('should respond with JSON array of a Fash populated', function(done) {
-    request(app)
-      .get('/api/aFash/' + aFash._id)
-      .expect(200)
-      .expect('Content-Type', /json/)
-      .end(function(err, res) {
-        if (err) {
-            return done(err);
-        }
-        res.body.should.be.instanceof(Object);
-        console.log('Getted aFash: ', res.body);
-        done();
-      });
-  });
-
-});

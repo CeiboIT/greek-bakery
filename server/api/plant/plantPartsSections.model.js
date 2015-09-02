@@ -19,4 +19,4 @@ var plantPartsSections = new Schema({
 // 	this._id = newId;
 // });
 
-module.exports = mongoose.model('plantPartsSections', plantPartsSections);
+module.exports = mongoose.model('PlantPartsSections', plantPartsSections);

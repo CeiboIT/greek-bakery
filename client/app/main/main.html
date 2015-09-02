@@ -1,10 +1,25 @@
+<header class="hero-unit" id="banner">
+  <div class="container">
+  	<h1>Greek Bakery!</h1>
+    <p class="lead">Tables Analysis v2.2</p>
+  </div>
+</header>
+
 <div class="container">
   <div class="row">
     <div class="col-lg-12">
-      <h1 class="page-header">Entities:</h1>
+      <h3 class="page-header">Entities:</h3>
       <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="entity in main.entities">
         <li><a href="" ng-click="main.viewEntity(entity)">{{entity.name}}</a></li>
       </ul>
     </div>
   </div>
 </div>
+
+<footer class="footer">
+  <div class="container">
+      <p>Bakery v2.2 |
+        by <a href="http://www.ceiboit.com">CeiboIT</a>
+      </p>
+  </div>
+</footer>

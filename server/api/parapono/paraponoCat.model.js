@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var paraponoCat = new Schema({
-	'IdParaponoCat': { type: Number, required: true, unique: true },
+	'IdParaponoCat': { type: String, required: true, unique: true },
 	'ParaponoCat': String
 });
 

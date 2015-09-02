@@ -1,12 +1,13 @@
 'use strict';
 
 var mongoose = require('mongoose');
+var populatePlugin = require('mongoose-power-populate')(mongoose);
 var Schema = mongoose.Schema;
 
 var evaluation = new Schema({
-	'IDSupEvaluation': { type: Number, required: true, unique: true },
-	'IDMarketer': { type: Schema.Types.Number, ref: 'Marketer' },
-	'IDPart': { type: Schema.Types.Number, ref: 'Plant' },
+	'IDSupEvaluation': { type: String, required: true, unique: true },
+	'IDMarketer': { type: Schema.Types.String, ref: 'Marketer' },
+	'IDPart': { type: Schema.Types.String, ref: 'Plant' },
 	'Year': Number,
 	'QualPrServ': Number,
 	'SpecifPrServ': Number,
@@ -27,6 +28,21 @@ var evaluation = new Schema({
 	'No3': Number,
 	'Date1': Date,
 	'Date2': Date
+});
+
+evaluation.plugin(populatePlugin, {
+    IDMarketer: {
+    	ref: 'Marketer',
+    	foreignKey: 'IDMarketer',
+    	localKey: 'IDMarketer',
+        singular: true
+    },
+	IDPart: {
+    	ref: 'Plant',
+    	foreignKey: 'IDplant',
+    	localKey: 'IDPart',
+        singular: true
+    }
 });
 
 module.exports = mongoose.model('Evaluation', evaluation);

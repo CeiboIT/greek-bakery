@@ -1,12 +1,13 @@
 'use strict';
 
 var mongoose = require('mongoose');
+var populatePlugin = require('mongoose-power-populate')(mongoose);
 var Schema = mongoose.Schema;
 
 var dromologioPelates = new Schema({
-	'IDDroml_Pelates': { type: Number, required: true, unique: true },
-	'IDDromologio': { type: Schema.Types.Number, ref: 'Dromologio' },
-	'IDMarketer': { type: Schema.Types.Number, ref: 'Marketer' },
+	'IDDroml_Pelates': { type: String, required: true, unique: true },
+	'IDDromologio': { type: Schema.Types.String, ref: 'Dromologio' },
+	'IDMarketer': { type: Schema.Types.String, ref: 'Marketer' },
 	'Seira': Number,
 	'Text1': String,
 	'Text2': String,
@@ -19,6 +20,15 @@ var dromologioPelates = new Schema({
 	'Memo1': String,
 	'YesNo1': Boolean,
 	'YesNo2': Boolean
+});
+
+dromologioPelates.plugin(populatePlugin, {
+    IDDromologio: {
+        ref: 'Dromologio',
+        foreignKey: 'IDDromologio',
+        localKey: 'IDDromologio',
+        singular: true
+    }
 });
 
 module.exports = mongoose.model('DromologioPelates', dromologioPelates);

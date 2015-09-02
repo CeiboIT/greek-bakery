@@ -1,0 +1,29 @@
+<div class="modal-header" >
+    <h4 class="modal-title">Parapono</h4>
+</div>
+<div class="modal-body">
+    <div class="container-fluid">
+        <ul>
+            <li><strong>Id</strong>: {{viewController.item.IdParapono}} </li>
+            <li><strong>DateRecive</strong>: {{viewController.item.DateRecive}} </li>
+            <li><strong>DateFinal</strong>: {{viewController.item.category.DateFinal}} </li>
+            <li><strong>Parapono</strong>: {{viewController.item.Parapono}} </li>
+            <li><strong>Category</strong>: {{viewController.item.IdParaponoCat.ParaponoCat}} </li>
+            <li><strong>LiptisParaponou</strong>: {{viewController.item.LiptisParaponou}} </li>
+            <li><strong>CustomerKind</strong>: {{viewController.item.CustomerKind}} </li>
+            <li><strong>Remarks</strong>: {{viewController.item.Remarks}} </li>
+            <li><strong>Actions</strong>: {{viewController.item.Actions}} </li>
+
+            <br>
+            <ng-include src="'app/marketer/view_paraponoSort.html'"></ng-include>
+        </ul>
+    </div>
+</div> <!-- modal body -->
+<div class="modal-footer">
+    <button id="ok_button"
+            type="submit"
+            ng-click="$close()"
+            class="btn btn-success">
+        Close
+    </button>
+</div>

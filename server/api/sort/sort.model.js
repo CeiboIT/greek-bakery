@@ -4,13 +4,13 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var sort = new Schema({
-	'IDSort': { type: Number, required: true, unique: true },
+	'IDSort': { type: String, required: true, unique: true },
 	'IDSortStorage': String,
 	'SortDescr': String,
-	'IDRaw': { type: Schema.Types.Number, ref: 'Raw' },
+	'IDRaw': { type: Schema.Types.String, ref: 'Raw' },
 	'IDCategory': { type: Schema.Types.String, ref: 'SortCategory' },
 	'IDSortSubCategory': { type: Schema.Types.String, ref: 'SortSubCategory' },
-	'IDMUnit': { type: Schema.Types.Number, ref: 'Mesurment' },
+	'IDMUnit': { type: Schema.Types.String, ref: 'Mesurment' },
 	'PieceWeithg': Number,
 	'IDOperation': { type: Schema.Types.String, ref: 'PlantPartsSectionsOperations' },
 	'SortYield': Number,

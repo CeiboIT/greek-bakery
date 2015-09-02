@@ -1,0 +1,28 @@
+<div class="modal-header" >
+    <h4 class="modal-title">Tech Info</h4>
+</div>
+<div class="modal-body">
+    <div class="container-fluid">
+        <ul>
+            <li><strong>IdTecInf</strong>: {{viewController.item.IdTecInf}} </li>
+            <li><strong>Refresh</strong>: {{viewController.item.Refresh}} </li>
+            <li><strong>Sort Sub Category</strong>: {{viewController.item.IDSortSubCategory.SortSubCategory}} </li>
+            <li><strong>Storage Contitions</strong>: {{viewController.item.StorageContitions}} </li>
+            <li><strong>Self Life</strong>: {{viewController.item.SelfLife}} </li>
+            <li><strong>Consuption Group</strong>: {{viewController.item.ConsuptionGroup}} </li>
+            <li><strong>PH</strong>: {{viewController.item.PH}} </li>
+            <li><strong>Aw</strong>: {{viewController.item.Aw}} </li>
+            <li><strong>TPC</strong>: {{viewController.item.TPC}} </li>
+
+            <br>
+        </ul>
+    </div>
+</div> <!-- modal body -->
+<div class="modal-footer">
+    <button id="ok_button"
+            type="submit"
+            ng-click="$close()"
+            class="btn btn-success">
+        Close
+    </button>
+</div>

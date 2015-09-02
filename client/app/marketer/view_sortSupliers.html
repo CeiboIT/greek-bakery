@@ -1,0 +1,47 @@
+<table class="table">
+<strong>Sort Supliers</strong>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Sort</th>
+            <th>Basic</th>
+            <th>Date</th>
+            <th>Price</th>
+<!--
+            <th>Text 1</th>
+            <th>Text 2</th>
+            <th>Text 3</th>
+            <th>No 1</th>
+            <th>No 2</th>
+            <th>No 3</th>
+            <th>Date 1</th>
+            <th>Date 2</th>
+            <th>Memo 1</th>
+            <th>YesNo 1</th>
+            <th>YesNo 2</th><
+-->
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="material in viewController.item.sortSupliers">
+            <td>{{material.IDAuto}}</td>
+            <td>{{material.IDSort.SortDescr}}</td>
+            <td>{{material.Basic}}</td>
+            <td>{{material.Date}}</td>
+            <td>{{material.Price}}</td>
+<!--
+            <td>{{material.Text1}}</td>
+            <td>{{material.Text2}}</td>
+            <td>{{material.Text3}}</td>
+            <td>{{material.No1}}</td>
+            <td>{{material.No2}}</td>
+            <td>{{material.No3}}</td>
+            <td>{{material.Date1}}</td>
+            <td>{{material.Date2}}</td>
+            <td>{{material.Memo1}}</td>
+            <td>{{material.YesNo1}}</td>
+            <td>{{material.YesNo2}}</td>
+-->
+        </tr>
+    </thead>
+</table>
