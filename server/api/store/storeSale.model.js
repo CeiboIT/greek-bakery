@@ -2,7 +2,7 @@
 
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var DataTable = require('mongoose-datatable');
+var DataTable = require('../../components/mongoose-datatable');
 var populatePlugin = require('mongoose-power-populate')(mongoose);
 
 DataTable.configure({ verbose: true, debug : true });
