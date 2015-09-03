@@ -1,17 +1,17 @@
 'use strict';
 
-var Worker = require('./worker.model');
-var WorkerKnowl = require('./WorkerKnowl.model');
+var WorkerModel = require('./worker.model');
+var WorkerKnowl = require('./workerKnowl.model');
 var operations = {};
 
 operations.getAll = function () {
-    return Worker.find()
+    return WorkerModel.find()
         //.populate('IdWorkersKnowl')
         .lean().exec();
 }
 
 operations.getDetail = function (workerId) {
-    return Worker.findById(workerId)
+    return WorkerModel.findById(workerId)
         //.populate('IdWorkersKnowl')
         .lean().exec();
 }
