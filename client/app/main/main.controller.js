@@ -20,9 +20,9 @@ angular.module('bakeryApp')
                 state: 'cFash'
             },
             {
-                name: 'Plant',
-                resource: 'plant',
-                state: 'plant'
+                name: 'Evaluation',
+                resource: 'evaluation',
+                state: 'evaluation'
             },
             {
                 name: 'Machine',
@@ -34,10 +34,37 @@ angular.module('bakeryApp')
                 resource: 'marketer',
                 state: 'marketer'
             },
+/*
+            {
+                name: 'Menu',
+                resource: 'menu',
+                state: 'menu'
+            },
+*/
+            {
+                name: 'Parapono',
+                resource: 'parapono',
+                state: 'parapono'
+            },
+            {
+                name: 'Plant',
+                resource: 'plant',
+                state: 'plant'
+            },
             {
                 name: 'Raws',
                 resource: 'raw',
-                state: 'raw'  
+                state: 'raw'
+            },
+            {
+                name: 'TechInfo',
+                resource: 'techInfo',
+                state: 'techInfo'
+            },
+            {
+                name: 'Worker',
+                resource: 'worker',
+                state: 'worker'
             }
         ];
 

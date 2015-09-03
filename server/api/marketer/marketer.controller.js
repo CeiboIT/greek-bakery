@@ -1,16 +1,14 @@
 'use strict';
 
-var Marketer = require('./marketer.model');
 var marketerService = require('./marketer.service');
 
 exports.index = function(req, res) {
-    Marketer.find()
-        .exec()
-            .then(function (marketers) {
-                return res.status(200).json(marketers);
-            }, function (err) {
-                handleError(res, err);
-            });
+    marketerService.getAll()
+        .then(function (marketers) {
+            return res.status(200).json(marketers);
+        }, function (err) {
+            handleError(res, err);
+        });
 };
 
 exports.detail = function(req, res) {

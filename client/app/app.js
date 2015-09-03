@@ -17,6 +17,11 @@ angular.module('bakeryApp', [
   'machine',
   'marketer',
   'raw',
+  'parapono',
+  'evaluation',
+  'menu',
+  'techInfo',
+  'worker',
 ])
     .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
         $urlRouterProvider

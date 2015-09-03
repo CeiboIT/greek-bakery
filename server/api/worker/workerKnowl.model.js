@@ -3,9 +3,9 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var workerKnowl = new Schema({
+var workesKnowl = new Schema({
 	'IdWorkersKnowl': { type: String, required: true, unique: true },
 	'WorkersKnowl': String
 });
 
-module.exports = mongoose.model('WorkerKnowl', workerKnowl);
+module.exports = mongoose.model('WorkesKnowl', workesKnowl);
