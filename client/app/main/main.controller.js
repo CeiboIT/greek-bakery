@@ -38,6 +38,11 @@ angular.module('bakeryApp')
                 name: 'Raws',
                 resource: 'raw',
                 state: 'raw'  
+            },
+            {
+                name: 'Store',
+                resource: 'store',
+                state: 'store'  
             }
         ];
 
