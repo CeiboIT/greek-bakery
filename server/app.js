@@ -48,6 +48,10 @@ server.listen(config.port, config.ip, function () {
 // require('./api/production/load.js');
 // require('./api/techInfo/load.js');
 // require('./api/evaluation/load.js');
+// require('./api/advice/load.js');
+// require('./api/calories/load.js');
+// require('./api/GDA/load.js');
+// require('./api/switchboard/load.js');
 
 // Expose app
 exports = module.exports = app;

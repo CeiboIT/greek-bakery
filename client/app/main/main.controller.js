@@ -65,6 +65,11 @@ angular.module('bakeryApp')
                 name: 'Worker',
                 resource: 'worker',
                 state: 'worker'
+            },
+            {
+                name: 'ReferenceValues',
+                resource: 'referenceValues',
+                state: 'referenceValues'
             }
         ];
 

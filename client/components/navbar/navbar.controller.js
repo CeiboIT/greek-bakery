@@ -20,39 +20,43 @@ angular.module('bakeryApp')
         link: '/cFash'
       },
       {
-        title: 'evaluation',
+        title: 'Evaluation',
         link: '/evaluation'
       },
       {
-        title: 'machine',
+        title: 'Machine',
         link: 'machine'
       },
       {
-        title: 'marketer',
+        title: 'Marketer',
         link: 'marketer'
       },
       {
-        title: 'menu',
+        title: 'Menu',
         link: 'menu'
       },
       {
-        title: 'parapono',
+        title: 'Parapono',
         link: 'parapono'
       },
       {
-        title: 'plant',
+        title: 'Plant',
         link: 'plant'
       },
       {
-        title: 'raws',
-        link: 'raws'
+        title: 'Raw',
+        link: 'raw'
       },
       {
-        title: 'techInfo',
+        title: 'Reference Values',
+        link: 'referenceValues'
+      },
+      {
+        title: 'Tech Info',
         link: 'techInfo'
       },
       {
-        title: 'worker',
+        title: 'Worker',
         link: 'worker'
       }
     ];
