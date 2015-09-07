@@ -3,11 +3,19 @@
 	'use strict';
 
 	var Table = angular.module('table', []);
+	
+	Table.config(function () {
+		// disable alert mode in dataTables
+		$.fn.dataTableExt.sErrMode = function (err) {
+			console.log(err);
+		};
+	});
 
 	var defaultTableOptions = {
         searching: false,
         bLengthChange: false,
-        pageLength: 20
+        pageLength: 20,
+        processing: true
 	};
 
 	Table.factory('rowCallback', function ($rootScope) {

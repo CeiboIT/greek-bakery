@@ -17,7 +17,8 @@ angular.module('bakeryApp', [
   'machine',
   'marketer',
   'raw',
-  'store'
+  'store',
+  'storeControl'
 ])
     .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
         $urlRouterProvider

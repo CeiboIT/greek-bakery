@@ -44,4 +44,4 @@ function handleError(res, err) {
     return res.status(500).send(err);
 }
 
-module.exports = { sales: sales };
+module.exports = { sales: sales, control: control };

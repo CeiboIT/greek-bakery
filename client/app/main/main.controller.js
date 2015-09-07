@@ -43,6 +43,11 @@ angular.module('bakeryApp')
                 name: 'Store',
                 resource: 'store',
                 state: 'store'  
+            },
+            {
+                name: 'StoreControl',
+                resource: 'storeControl',
+                state: 'storeControl'  
             }
         ];
 

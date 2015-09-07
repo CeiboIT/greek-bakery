@@ -5,7 +5,7 @@ var Schema = mongoose.Schema;
 var DataTable = require('../../components/mongoose-datatable');
 var populatePlugin = require('mongoose-power-populate')(mongoose);
 
-DataTable.configure({ verbose: true, debug : true });
+// DataTable.configure({ verbose: true, debug : true });
 
 var storeSale = new Schema({
 	'IDStoreSales': { type: String, required: true, unique: true },
