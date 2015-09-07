@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var maintance = new Schema({
-	'IdMaintance': { type: Number, required: true, unique: true },
+	'IdMaintance': { type: String, required: true, unique: true },
 	'Maintance': String
 });
 

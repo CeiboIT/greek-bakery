@@ -1,5 +1,5 @@
 (function () {
-	
+
 	'use strict';
 
 	var Table = angular.module('table', []);
@@ -41,6 +41,7 @@
 				service.get(item._id)
 				.then(function (response) {
 			    	$modal.open({
+			    		size: 'lg',
 			    		templateUrl: templateUrl,
 			    		controller: function () {
 					    	var viewController = this;
@@ -65,7 +66,7 @@
 			_.forOwn(defaultTableOptions, function (value, key) {
 				response.withOption(key, value);
 			});
-			
+
 			var viewItemFn = viewItemBuilder(opts);
 			response.withOption('rowCallback', rowCallback(viewItemFn));
 		    return response;

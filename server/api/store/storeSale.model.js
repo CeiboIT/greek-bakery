@@ -1,6 +1,7 @@
 'use strict';
 
 var mongoose = require('mongoose');
+var populatePlugin = require('mongoose-power-populate')(mongoose);
 var Schema = mongoose.Schema;
 var DataTable = require('../../components/mongoose-datatable');
 var populatePlugin = require('mongoose-power-populate')(mongoose);
@@ -12,7 +13,7 @@ var storeSale = new Schema({
 	'IDMarketer': { type: Schema.Types.String, ref: 'Marketer' },
 	'Date': Date,
 	'Parastatiko': String,
-	'IDSort': { type: Schema.Types.Number, ref: 'Sort' },
+	'IDSort': { type: Schema.Types.String, ref: 'Sort' },
 	'Price': Number,
 	'Quantity': Number,
 	'Returns': Number,

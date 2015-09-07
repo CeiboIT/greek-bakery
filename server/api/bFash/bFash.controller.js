@@ -1,16 +1,14 @@
 'use strict';
 
-var BFash = require('./bFash.model');
 var bFashService = require('./bFash.service');
 
 exports.index = function(req, res) {
-    BFash.find()
-        .exec()
-            .then(function (fashes) {
-                return res.status(200).json(fashes);
-            }, function (err) {
-                handleError(res, err);
-            });
+    bFashService.getAll()
+        .then(function (fashes) {
+            return res.status(200).json(fashes);
+        }, function (err) {
+            handleError(res, err);
+        });
 };
 
 exports.detail = function(req, res) {

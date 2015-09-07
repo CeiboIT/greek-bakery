@@ -1,6 +1,7 @@
 'use strict';
 
 var mongoose = require('mongoose');
+var populatePlugin = require('mongoose-power-populate')(mongoose);
 var Schema = mongoose.Schema;
 
 var dromologioPelates = new Schema({
@@ -19,6 +20,15 @@ var dromologioPelates = new Schema({
 	'Memo1': String,
 	'YesNo1': Boolean,
 	'YesNo2': Boolean
+});
+
+dromologioPelates.plugin(populatePlugin, {
+    IDDromologio: {
+        ref: 'Dromologio',
+        foreignKey: 'IDDromologio',
+        localKey: 'IDDromologio',
+        singular: true
+    }
 });
 
 module.exports = mongoose.model('DromologioPelates', dromologioPelates);
