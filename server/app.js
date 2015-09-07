@@ -44,13 +44,15 @@ server.listen(config.port, config.ip, function () {
 // require('./api/mesurment/load.js');
 // require('./api/sort/load.js');
 // require('./api/raw/load.js');
-// Store sales require('./api/store/load.js');
+// require('./api/store/load.js');
+// require('./api/store/customLoad.js');
+
 // require('./api/production/load.js');
 // require('./api/techInfo/load.js');
 // require('./api/evaluation/load.js');
 // require('./api/advice/load.js');
-// require('./api/calories/load.js');
-// require('./api/GDA/load.js');
+require('./api/calories/load.js');
+require('./api/GDA/load.js');
 // require('./api/switchboard/load.js');
 
 // Expose app

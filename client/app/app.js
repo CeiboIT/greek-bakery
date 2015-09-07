@@ -17,6 +17,8 @@ angular.module('bakeryApp', [
   'machine',
   'marketer',
   'raw',
+  'store',
+  'storeControl',
   'parapono',
   'evaluation',
   'menu',
