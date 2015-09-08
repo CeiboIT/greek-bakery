@@ -6,8 +6,8 @@ var StoreControl = require('../store/storeControl.model');
 var SortSuplier = require('../sort/sortSuplier.model');
 var StoreSale = require('../store/storeSale.model');
 var SalesDate = require('./salesDate.model');
-var DromologioPelates = require('./dromologioPelates.model');
-var Dromologio = require('./dromologio.model');
+var DromologioPelates = require('../dromologio/dromologioPelates.model');
+var Dromologio = require('../dromologio/dromologio.model');
 var IDSort = require('../sort/sort.model');
 var operations = {};
 
