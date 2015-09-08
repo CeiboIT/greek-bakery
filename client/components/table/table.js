@@ -37,20 +37,36 @@
 		return function viewItem (opts) {
 			var templateUrl =  opts.viewTemplateUrl,
 			    service = opts.service;
+
+			var defaultController = function (item) {
+		    	var viewController = this;
+		    	viewController.item = item;
+		    };
+
 			return function (item) {
 				service.get(item._id)
 				.then(function (response) {
 			    	$modal.open({
 			    		size: 'lg',
 			    		templateUrl: templateUrl,
-			    		controller: function () {
-					    	var viewController = this;
-					    	viewController.item = response;
-				    	},
-			    		controllerAs: 'viewController' });
+			    		controller: opts.viewController || defaultController,
+			    		resolve: {
+			    			item: function () { return response; }
+			    		},
+			    		controllerAs: 'viewController' 
+			    	});
 				});
 			};
 	    };
+	});
+
+	Table.factory('createViewTable', function (DTOptionsBuilder) {
+		return function (opts) {
+			angular.extend(defaultTableOptions, opts.tableOptions);
+			var response = DTOptionsBuilder.newOptions()
+				.withOption('data', opts.data);
+			return response;
+		};
 	});
 
 	Table.factory('createTable', function (DTOptionsBuilder, rowCallback, viewItemBuilder) {
