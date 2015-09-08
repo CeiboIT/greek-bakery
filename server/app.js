@@ -51,8 +51,8 @@ server.listen(config.port, config.ip, function () {
 // require('./api/techInfo/load.js');
 // require('./api/evaluation/load.js');
 // require('./api/advice/load.js');
-require('./api/calories/load.js');
-require('./api/GDA/load.js');
+// require('./api/calories/load.js');
+// require('./api/GDA/load.js');
 // require('./api/switchboard/load.js');
 
 // Expose app
