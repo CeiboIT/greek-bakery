@@ -52,10 +52,21 @@
             <li><strong>YesNo1</strong>: {{viewController.item.YesNo1}} </li>
             <li><strong>YesNo2</strong>: {{viewController.item.YesNo2}} </li>
 -->
-
             <br>
-            <ng-include src="'app/cFash/view_materials.html'"></ng-include>
-            <ng-include src="'app/cFash/view_materialsYS.html'"></ng-include>
+            <table  datatable=""
+                    dt-options="viewController.materialsTable.dtOptions"
+                    dt-columns="viewController.materialsTable.dtColumns"
+                    class="row-border hover">
+                    <caption>Materials</caption>
+            </table>
+            <br>
+            <table  datatable=""
+                    dt-options="viewController.materialsYSTable.dtOptions"
+                    dt-columns="viewController.materialsYSTable.dtColumns"
+                    class="row-border hover">
+                    <caption>Materials YS</caption>
+            </table>
+
         </ul>
     </div>
 </div> <!-- modal body -->

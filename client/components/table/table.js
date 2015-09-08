@@ -18,6 +18,13 @@
         processing: true
 	};
 
+	var defaultViewTableOptions = {
+        searching: false,
+        bLengthChange: false,
+        pageLength: 10,
+        processing: true
+	};
+
 	Table.factory('rowCallback', function ($rootScope) {
 		return function (viewItemFn) {
 			return function _rowCallback(nRow, aData) {
@@ -62,9 +69,14 @@
 
 	Table.factory('createViewTable', function (DTOptionsBuilder) {
 		return function (opts) {
-			angular.extend(defaultTableOptions, opts.tableOptions);
+			angular.extend(defaultViewTableOptions, opts.tableOptions);
 			var response = DTOptionsBuilder.newOptions()
 				.withOption('data', opts.data);
+
+			_.forOwn(defaultViewTableOptions, function (value, key) {
+				response.withOption(key, value);
+			});
+
 			return response;
 		};
 	});
