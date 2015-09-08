@@ -1,0 +1,30 @@
+<div class="modal-header" >
+    <h4 class="modal-title">Label</h4>
+</div>
+<div class="modal-body">
+    <div class="container-fluid">
+        <ul>
+            <li><strong>ID Label</strong>: {{viewController.item.IDLabel}} </li>
+            <li><strong>ID Sort Storage</strong>: {{viewController.item.IDSortStorage}} </li>
+            <li><strong>Sort Description Label</strong>: {{viewController.item.SortDescrLabel}} </li>
+            <li><strong>Sub Category Label</strong>: {{viewController.item.SubCtegoryLabel}} </li>
+            <li><strong>Compotiton</strong>: {{viewController.item.Compotiton}} </li>
+            <li><strong>Date Expiry</strong>: {{viewController.item.DateExpiry}} </li>
+            <li><strong>Date Production</strong>: {{viewController.item.DateProduction}} </li>
+            <li><strong>LN</strong>: {{viewController.item.LN}} </li>
+            <li><strong>Producer</strong>: {{viewController.item.Producer}} </li>
+            <li><strong>Allergies</strong>: {{viewController.item.Allergies}} </li>
+            <li><strong>Net Weigth</strong>: {{viewController.item.NetWeigth}} </li>
+
+            <br>
+        </ul>
+    </div>
+</div> <!-- modal body -->
+<div class="modal-footer">
+    <button id="ok_button"
+            type="submit"
+            ng-click="$close()"
+            class="btn btn-success">
+        Close
+    </button>
+</div>
