@@ -52,6 +52,13 @@ server.listen(config.port, config.ip, function () {
 // require('./api/calories/load.js');
 // require('./api/GDA/load.js');
 // require('./api/switchboard/load.js');
+// require('./api/generalDamage/load.js');
+// require('./api/label/load.js');
+// require('./api/prodDate/load.js');
+// require('./api/prodProcudeurs/load.js');
+// require('./api/program/load.js');
+// require('./api/WP/load.js');
+// require('./api/year/load.js');
 
 // Expose app
 exports = module.exports = app;

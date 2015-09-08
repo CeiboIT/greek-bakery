@@ -5,19 +5,24 @@ angular.module('bakeryApp')
         var main = this;
         main.entities = [
             {
-                name: 'A_Fash',
+                name: 'A Fash',
                 resource: 'aFash',
                 state: 'aFash'
             },
             {
-                name: 'B_Fash',
+                name: 'B Fash',
                 resource: 'bFash',
                 state: 'bFash'
             },
             {
-                name: 'C_Fash',
+                name: 'C Fash',
                 resource: 'cFash',
                 state: 'cFash'
+            },
+            {
+                name: 'Dromologio Pelates',
+                resource: 'dromologio',
+                state: 'dromologio'
             },
             {
                 name: 'Evaluation',
@@ -57,7 +62,7 @@ angular.module('bakeryApp')
                 state: 'raw'
             },
             {
-                name: 'TechInfo',
+                name: 'Tech Info',
                 resource: 'techInfo',
                 state: 'techInfo'
             },
@@ -67,7 +72,7 @@ angular.module('bakeryApp')
                 state: 'worker'
             },
             {
-                name: 'ReferenceValues',
+                name: 'Reference Values',
                 resource: 'referenceValues',
                 state: 'referenceValues'
             }
