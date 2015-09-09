@@ -39,13 +39,6 @@ angular.module('bakeryApp')
                 resource: 'marketer',
                 state: 'marketer'
             },
-/*
-            {
-                name: 'Menu',
-                resource: 'menu',
-                state: 'menu'
-            },
-*/
             {
                 name: 'Parapono',
                 resource: 'parapono',
@@ -59,7 +52,17 @@ angular.module('bakeryApp')
             {
                 name: 'Raws',
                 resource: 'raw',
-                state: 'raw'
+                state: 'raw'  
+            },
+            {
+                name: 'Store',
+                resource: 'store',
+                state: 'store'  
+            },
+            {
+                name: 'StoreControl',
+                resource: 'storeControl',
+                state: 'storeControl'  
             },
             {
                 name: 'Tech Info',

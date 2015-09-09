@@ -21,7 +21,13 @@
             <li><strong>Date start</strong>: {{viewController.item.DateStart}} </li>
             <li><strong>Date finish</strong>: {{viewController.item.DateFinish}} </li>
             <br>
-            <ng-include src="'app/aFash/view_materials.html'"></ng-include>
+            <table  datatable=""
+                    dt-options="viewController.materialsTable.dtOptions"
+                    dt-columns="viewController.materialsTable.dtColumns"
+                    class="row-border hover">
+            </table>
+
+            <!-- <ng-include src="'app/aFash/view_materials.html'"></ng-include> -->
         </ul>
     </div>
 </div> <!-- modal body -->

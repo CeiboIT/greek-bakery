@@ -12,15 +12,35 @@
 		});
 	});
 
+	var viewItemController = function (createViewTable, DTColumnBuilder, item) {
+		var controller = this;
+		controller.item = item;
+		// Options for Fash materials table
+		controller.materialsTable = {
+			dtOptions: createViewTable({data: item.materials}),
+			dtColumns: [
+				DTColumnBuilder.newColumn('IDSort.SortDescr').withTitle('Sort'),
+				DTColumnBuilder.newColumn('Sxolia').withTitle('Sxolia'),
+				DTColumnBuilder.newColumn('IDA_FASHQuantity').withTitle('Quantity'),
+				DTColumnBuilder.newColumn('IDA_FASHLoose').withTitle('Loose'),
+				DTColumnBuilder.newColumn('IDA_FASHRecipe').withTitle('Recipe'),
+				DTColumnBuilder.newColumn('IDA_FASHDelete').withTitle('Delete')
+			]
+		};
+	};
+	
+	viewItemController.$inject = ['createViewTable', 'DTColumnBuilder', 'item'];
+
 	AFash.controller('AFashController',
-		function ($scope, createTable, DTColumnBuilder, entityService) {
+		function (createTable, DTColumnBuilder, entityService) {
 
 		var controller = this,
 			service = entityService.getCrudFor('aFash');
 
 		controller.dtOptions = createTable({
 			service: service,
-			viewTemplateUrl: 'app/aFash/view.html'
+			viewTemplateUrl: 'app/aFash/view.html',
+			viewController: viewItemController
 		});
 
 	    controller.dtColumns = [

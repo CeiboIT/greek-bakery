@@ -3,6 +3,10 @@
 var mongoose = require('mongoose');
 var populatePlugin = require('mongoose-power-populate')(mongoose);
 var Schema = mongoose.Schema;
+var DataTable = require('../../components/mongoose-datatable');
+var populatePlugin = require('mongoose-power-populate')(mongoose);
+
+// DataTable.configure({ verbose: true, debug : true });
 
 var storeSale = new Schema({
 	'IDStoreSales': { type: String, required: true, unique: true },
@@ -17,12 +21,20 @@ var storeSale = new Schema({
 });
 
 storeSale.plugin(populatePlugin, {
+    IDMarketer: {
+      ref: 'Marketer',
+      foreignKey: 'IDMarketer',
+      localKey: 'IDMarketer',
+      singular: true
+    },
     IDSort: {
-        ref: 'Sort',
-        foreignKey: 'IDSort',
-        localKey: 'IDSort',
-        singular: true
+      ref: 'Sort',
+      foreignKey: 'IDSort',
+      localKey: 'IDSort',
+      singular: true
     }
 });
+
+storeSale.plugin(DataTable.init);
 
 module.exports = mongoose.model('StoreSale', storeSale);

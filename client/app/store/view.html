@@ -1,0 +1,26 @@
+<div class="modal-header" >
+    <h4 class="modal-title">Store sale</h4>
+</div>
+<div class="modal-body">
+    <div class="container-fluid">
+        <ul>
+            <li><strong>Id</strong>: {{viewController.item.IDStoreSales}} </li>
+            <li><strong>Marketer</strong>: {{viewController.item.IDMarketer.CompanyName}} </li>
+            <li><strong>Date</strong>: {{viewController.item.Date}} </li>
+            <li><strong>Parastatiko</strong>: {{viewController.item.Parastatiko}} </li>
+            <li><strong>Sort</strong>: {{viewController.item.IDSort.SortDescr}} </li>
+            <li><strong>Price</strong>: {{viewController.item.Price}} </li>
+            <li><strong>Quantity</strong>: {{viewController.item.Quantity}} </li>
+            <li><strong>Returns</strong>: {{viewController.item.Returns}} </li>
+            <li><strong>IDNotEnough</strong>: {{viewController.item.IDNotEnough}} </li>
+        </ul>
+    </div>
+</div> <!-- modal body -->
+<div class="modal-footer">
+    <button id="ok_button"
+            type="submit"
+            ng-click="$close()"
+            class="btn btn-success">
+        Close
+    </button>
+</div>

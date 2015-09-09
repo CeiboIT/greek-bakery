@@ -58,7 +58,15 @@ angular.module('bakeryApp')
       {
         title: 'Worker',
         link: 'worker'
-      }
+      },
+      {
+        title: 'Store sales',
+        link: 'store'
+      },
+      {
+        title: 'Store control',
+        link: 'storeControl'
+      },
     ];
 
     $scope.isCollapsed = true;

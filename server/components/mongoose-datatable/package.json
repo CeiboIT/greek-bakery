@@ -1,0 +1,52 @@
+{
+  "name": "mongoose-datatable",
+  "description": "Server side dataTable request support for mongoose",
+  "version": "1.0.4",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eherve/mongoose-datatable.git"
+  },
+  "author": {
+    "name": "Eric Herve",
+    "email": "eric.herve.95@gmail.com"
+  },
+  "main": "./index",
+  "directories": {
+    "lib": "."
+  },
+  "scripts": {
+    "test": "node test/app.js"
+  },
+  "engines": {
+    "node": ">= 0.8.1"
+  },
+  "keywords": [
+    "mongoose",
+    "dataTable"
+  ],
+  "gitHead": "cf9ff7ad5a39ae6c8b2e9e5fc7a6061f0b21d33d",
+  "bugs": {
+    "url": "https://github.com/eherve/mongoose-datatable/issues"
+  },
+  "homepage": "https://github.com/eherve/mongoose-datatable#readme",
+  "_id": "mongoose-datatable@1.0.4",
+  "_shasum": "1163efce039af70d8a32a227d6a6fa0921da234a",
+  "_from": "mongoose-datatable@",
+  "_npmVersion": "2.10.1",
+  "_nodeVersion": "0.12.4",
+  "_npmUser": {
+    "name": "eherve",
+    "email": "eric.herve.95@gmail.com"
+  },
+  "dist": {
+    "shasum": "1163efce039af70d8a32a227d6a6fa0921da234a",
+    "tarball": "http://registry.npmjs.org/mongoose-datatable/-/mongoose-datatable-1.0.4.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "eherve",
+      "email": "eric.herve.95@gmail.com"
+    }
+  ],
+  "_resolved": "https://registry.npmjs.org/mongoose-datatable/-/mongoose-datatable-1.0.4.tgz"
+}
