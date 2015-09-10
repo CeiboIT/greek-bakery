@@ -5,7 +5,7 @@ var populatePlugin = require('mongoose-power-populate')(mongoose);
 var Schema = mongoose.Schema;
 
 var raw = new Schema({
-	'IDRaw': { type: Number, required: true, unique: true },
+	'IDRaw': { type: String, required: true, unique: true },
 	'Choice': Boolean,
 	'Raw': String,
 	'IDCompositionDescription': { type: Schema.Types.String, ref: 'RawCompositionDescription' },

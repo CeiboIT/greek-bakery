@@ -1,0 +1,22 @@
+<div class="modal-header" >
+    <h4 class="modal-title">Plant</h4>
+</div>
+<div class="modal-body">
+    <div class="container-fluid">
+        <ul>
+            <li><strong>IdPlant</strong>: {{viewController.item.IDplant}} </li>
+            <li><strong>Plant Description</strong>: {{viewController.item.PlantDescription}} </li>
+            <li><strong>EAN</strong>: {{viewController.item.EAN}} </li>
+            <br>
+            <ng-include src="'app/plant/view_plantParts.html'"></ng-include>
+        </ul>
+    </div>
+</div> <!-- modal body -->
+<div class="modal-footer">
+    <button id="ok_button"
+            type="submit"
+            ng-click="$close()"
+            class="btn btn-success">
+        Close
+    </button>
+</div>
