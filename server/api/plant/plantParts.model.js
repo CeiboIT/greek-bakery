@@ -1,22 +1,23 @@
 'use strict';
 
 var mongoose = require('mongoose');
+var populatePlugin = require('mongoose-power-populate')(mongoose);
 var Schema = mongoose.Schema;
-
-// tbPlant table
 
 var plantParts = new Schema({
 	'IDPart': { type: String, required: true, unique: true },
 	'IDplant': { type: Schema.Types.String, ref: 'Plant' },
-	'Part': String
+	'Part': String,
+    'plantPartsSections': Array
 });
 
-// plantParts.virtual('IDPart').get(function () {
-// 	return this._id;
-// });
-
-// plantParts.virtual('IDPart').set(function (newId) {
-// 	this._id = newId;
-// });
+plantParts.plugin(populatePlugin, {
+    plantPartsSections: {
+        ref: 'PlantParts',
+        foreignKey: 'IDPart',
+        localKey: 'IDPart',
+        singular: false
+    }
+});
 
 module.exports = mongoose.model('PlantParts', plantParts);

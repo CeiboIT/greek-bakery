@@ -1,9 +1,8 @@
 'use strict';
 
 var mongoose = require('mongoose');
+var populatePlugin = require('mongoose-power-populate')(mongoose);
 var Schema = mongoose.Schema;
-
-// tbPlant table
 
 var plant = new Schema({
 	'IDplant': { type: String, required: true, unique: true },
@@ -17,7 +16,17 @@ var plant = new Schema({
 	'No3': Number,
 	'Date1': Date,
 	'Date2': Date,
-	'Date3': Date
+	'Date3': Date,
+	'plantParts': Array
+});
+
+plant.plugin(populatePlugin, {
+    plantParts: {
+    	ref: 'PlantParts',
+    	foreignKey: 'IDplant',
+    	localKey: 'IDplant',
+        singular: false
+    }
 });
 
 module.exports = mongoose.model('Plant', plant);
