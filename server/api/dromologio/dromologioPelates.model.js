@@ -28,7 +28,13 @@ dromologioPelates.plugin(populatePlugin, {
         foreignKey: 'IDDromologio',
         localKey: 'IDDromologio',
         singular: true
-    }
+    },
+    IDMarketer: {
+        ref: 'Marketer',
+        foreignKey: 'IDMarketer',
+        localKey: 'IDMarketer',
+        singular: true
+    },
 });
 
 module.exports = mongoose.model('DromologioPelates', dromologioPelates);

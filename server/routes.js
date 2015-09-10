@@ -30,6 +30,14 @@ module.exports = function(app) {
   app.use('/api/calories', require('./api/calories'));
   app.use('/api/GDA', require('./api/GDA'));
   app.use('/api/switchboard', require('./api/switchboard'));
+  app.use('/api/dromologio', require('./api/dromologio'));
+  app.use('/api/generalDamage', require('./api/generalDamage'));
+  app.use('/api/label', require('./api/label'));
+  app.use('/api/prodDate', require('./api/prodDate'));
+  app.use('/api/prodProcudeurs', require('./api/prodProcudeurs'));
+  app.use('/api/program', require('./api/program'));
+  app.use('/api/WP', require('./api/WP'));
+  app.use('/api/year', require('./api/year'));
 
   // All undefined asset or api routes should return a 404
   app.route('/:url(api|auth|components|app|bower_components|assets)/*')

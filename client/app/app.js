@@ -24,7 +24,8 @@ angular.module('bakeryApp', [
   'menu',
   'techInfo',
   'worker',
-  'referenceValues'
+  'referenceValues',
+  'dromologio'
 ])
     .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
         $urlRouterProvider
