@@ -44,8 +44,8 @@
 		});
 
 	    controller.dtColumns = [
-	        DTColumnBuilder.newColumn('A_FASH_IDStorage').withTitle('A_FASH_IDStorage'),
-	        DTColumnBuilder.newColumn('A_FASH').withTitle('A_FASH')
+	        DTColumnBuilder.newColumn('A_FASH_IDStorage').withTitle('ID Storage'),
+	        DTColumnBuilder.newColumn('A_FASH').withTitle('Fash')
 	    ];
 
 	});

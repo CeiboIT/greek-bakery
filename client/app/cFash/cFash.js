@@ -20,11 +20,11 @@
             dtOptions: createViewTable({data: item.materials}),
             dtColumns: [
                 DTColumnBuilder.newColumn('IDSort.SortDescr').withTitle('Sort'),
-                DTColumnBuilder.newColumn('Sxolia').withTitle('Sxolia'),
-                DTColumnBuilder.newColumn('IDA_FASHQuantity').withTitle('Quantity'),
-                DTColumnBuilder.newColumn('IDA_FASHLoose').withTitle('Loose'),
-                DTColumnBuilder.newColumn('IDA_FASHRecipe').withTitle('Recipe'),
-                DTColumnBuilder.newColumn('IDA_FASHDelete').withTitle('Delete')
+                DTColumnBuilder.newColumn('IDC_FASHSxolia').withTitle('Sxolia'),
+                DTColumnBuilder.newColumn('IDC_FASHQuantity').withTitle('Quantity'),
+                DTColumnBuilder.newColumn('IDC_FASHLoose').withTitle('Loose'),
+                DTColumnBuilder.newColumn('IDC_FASHRecipe').withTitle('Recipe'),
+                DTColumnBuilder.newColumn('IDC_FASHDelete').withTitle('Delete')
             ]
         };
 
@@ -32,11 +32,10 @@
             dtOptions: createViewTable({data: item.materialsYS}),
             dtColumns: [
                 DTColumnBuilder.newColumn('IDSort.SortDescr').withTitle('Sort'),
-                DTColumnBuilder.newColumn('Sxolia').withTitle('Sxolia'),
-                DTColumnBuilder.newColumn('IDA_FASHQuantity').withTitle('Quantity'),
-                DTColumnBuilder.newColumn('IDA_FASHLoose').withTitle('Loose'),
-                DTColumnBuilder.newColumn('IDA_FASHRecipe').withTitle('Recipe'),
-                DTColumnBuilder.newColumn('IDOperation.Operation').withTitle('Operation')
+                DTColumnBuilder.newColumn('IDC_FASHQuantity').withTitle('Quantity'),
+                DTColumnBuilder.newColumn('IDC_FASHLoose').withTitle('Loose'),
+                DTColumnBuilder.newColumn('IDC_FASHRecipe').withTitle('Recipe'),
+                DTColumnBuilder.newColumn('IDOperation').withTitle('Operation')
             ]
         };
 
@@ -58,8 +57,8 @@
         });
 
         controller.dtColumns = [
-            DTColumnBuilder.newColumn('C_FASH_IDStorage').withTitle('C_FASH_IDStorage'),
-            DTColumnBuilder.newColumn('C_FASH').withTitle('C_FASH')
+            DTColumnBuilder.newColumn('C_FASH_IDStorage').withTitle('ID Storage'),
+            DTColumnBuilder.newColumn('C_FASH').withTitle('Fash')
         ];
 
     });
