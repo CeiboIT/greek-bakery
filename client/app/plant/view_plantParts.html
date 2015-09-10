@@ -1,0 +1,15 @@
+<table class="table">
+<strong>Plant Parts</strong>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Part</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="item in viewController.item.plantParts">
+            <td>{{item.IDPart}}</td>
+            <td>{{item.Part}}</td>
+        </tr>
+    </thead>
+</table>
