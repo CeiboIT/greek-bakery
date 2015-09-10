@@ -1,1 +1,52 @@
-view.html
+<div class="modal-header" >
+    <h4 class="modal-title">Raw</h4>
+</div>
+<div class="modal-body">
+    <div class="container-fluid">
+        <ul>
+            <li><strong>IDRaw</strong>: {{viewController.item.IDRaw}} </li>
+            <li><strong>Choice</strong>: {{viewController.item.Choice}} </li>
+            <li><strong>Raw</strong>: {{viewController.item.Raw}} </li>
+            <li><strong>Composition Description</strong>: {{viewController.item.IDCompositionDescription.CompositionDescription}} </li>
+            <li><strong>Composition Description English</strong>: {{viewController.item.IDCompositionDescription.CompositionDescriptionEnglish}} </li>
+            <li><strong>Category</strong>: {{viewController.item.IDCategory.Category}} </li>
+            <li><strong>Carbohydrt</strong>: {{viewController.item.Carbohydrt}} </li>
+            <li><strong>Sugars</strong>: {{viewController.item.Sugars}} </li>
+            <li><strong>OrganicsAcid</strong>: {{viewController.item.OrganicsAcid}} </li>
+            <li><strong>Polyols</strong>: {{viewController.item.Polyols}} </li>
+            <li><strong>Alcohol</strong>: {{viewController.item.Alcohol}} </li>
+            <li><strong>Fats</strong>: {{viewController.item.Fats}} </li>
+            <li><strong>Protein</strong>: {{viewController.item.Protein}} </li>
+            <li><strong>Ash</strong>: {{viewController.item.Ash}} </li>
+            <li><strong>Fiber_</strong>: {{viewController.item.Fiber_}} </li>
+            <li><strong>Calcium</strong>: {{viewController.item.Calcium}} </li>
+            <li><strong>Iron</strong>: {{viewController.item.Iron}} </li>
+            <li><strong>Magnesium</strong>: {{viewController.item.Magnesium}} </li>
+            <li><strong>Phosphorus</strong>: {{viewController.item.Phosphorus}} </li>
+            <li><strong>Potassium</strong>: {{viewController.item.Potassium}} </li>
+            <li><strong>Sodium</strong>: {{viewController.item.Sodium}} </li>
+            <li><strong>Zinc</strong>: {{viewController.item.Zinc}} </li>
+            <li><strong>Copper</strong>: {{viewController.item.Copper}} </li>
+            <li><strong>Manganese</strong>: {{viewController.item.Manganese}} </li>
+            <li><strong>FA_Sat</strong>: {{viewController.item.FA_Sat}} </li>
+            <li><strong>FA_Mono</strong>: {{viewController.item.FA_Mono}} </li>
+            <li><strong>FA_Poly</strong>: {{viewController.item.FA_Poly}} </li>
+            <li><strong>Cholestrl</strong>: {{viewController.item.Cholestrl}} </li>
+            <li><strong>Emulsifiers</strong>: {{viewController.item.Emulsifiers}} </li>
+            <li><strong>Stabilizers</strong>: {{viewController.item.Stabilizers}} </li>
+            <li><strong>CocosButter</strong>: {{viewController.item.CocosButter}} </li>
+            <li><strong>MilkFats</strong>: {{viewController.item.MilkFats}} </li>
+            <li><strong>Presevatives</strong>: {{viewController.item.Presevatives}} </li>
+            <li><strong>Flavors</strong>: {{viewController.item.Flavors}} </li>
+            <li><strong>Colors</strong>: {{viewController.item.Colors}} </li>
+        </ul>
+    </div>
+</div> <!-- modal body -->
+<div class="modal-footer">
+    <button id="ok_button"
+            type="submit"
+            ng-click="$close()"
+            class="btn btn-success">
+        Close
+    </button>
+</div>
