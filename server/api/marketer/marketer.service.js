@@ -13,13 +13,13 @@ var operations = {};
 
 operations.getAll = function () {
     return Marketer.find()
-        .populate('IDMarketerCategory storeControl sortSupliers.IDSort storeSales.IDSort salesDates dromologioPelates.IDDromologio')
+        .populate('IDMarketerCategory sortSupliers salesDates dromologioPelates.IDDromologio')//   storeSales.IDSort storeControl ')
         .lean().exec();
 }
 
 operations.getDetail = function (marketerId) {
     return Marketer.findById(marketerId)
-        .populate('IDMarketerCategory storeControl sortSupliers.IDSort storeSales.IDSort salesDates dromologioPelates.IDDromologio')
+        .populate('IDMarketerCategory sortSupliers salesDates dromologioPelates.IDDromologio')
         .lean().exec();
 }
 

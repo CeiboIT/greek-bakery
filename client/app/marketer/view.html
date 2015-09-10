@@ -35,11 +35,31 @@
             <li><strong>YesNo 2</strong>: {{viewController.item.YesNo2}} </li>
 -->
             <br>
-            <ng-include src="'app/marketer/view_dromologioPelates.html'"></ng-include>
-            <ng-include src="'app/marketer/view_salesDates.html'"></ng-include>
-            <ng-include src="'app/marketer/view_sortSupliers.html'"></ng-include>
-            <ng-include src="'app/marketer/view_storeControl.html'"></ng-include>
-            <ng-include src="'app/marketer/view_storeSales.html'"></ng-include>
+            <table  datatable=""
+                    dt-options="viewController.dromoglioPelatesTable.dtOptions"
+                    dt-columns="viewController.dromoglioPelatesTable.dtColumns"
+                    class="row-border hover compact">
+                <caption>Dromoglio Pelates </caption>
+            </table>
+            <table  datatable=""
+                    dt-options="viewController.salesDateTable.dtOptions"
+                    dt-columns="viewController.salesDateTable.dtColumns"
+                    class="row-border hover compact">
+                <caption>Sales dates </caption>
+            </table>
+
+            <table  datatable=""
+                    dt-options="viewController.sortSupliersTable.dtOptions"
+                    dt-columns="viewController.sortSupliersTable.dtColumns"
+                    class="row-border hover compact">
+                <caption>Sort supliers</caption>
+            </table>
+
+            <!-- <ng-include src="'app/marketer/view_salesDates.html'"></ng-include> -->
+            <!-- <ng-include src="'app/marketer/view_dromologioPelates.html'"></ng-include> -->
+            <!-- <ng-include src="'app/marketer/view_sortSupliers.html'"></ng-include> -->
+            <!-- <ng-include src="'app/marketer/view_storeControl.html'"></ng-include> -->
+            <!-- <ng-include src="'app/marketer/view_storeSales.html'"></ng-include> -->
         </ul>
     </div>
 </div> <!-- modal body -->

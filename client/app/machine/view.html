@@ -18,9 +18,28 @@
             <li><strong>Reprasantator Fax</strong>: {{viewController.item.ReprasantatorFax}} </li>
             <li><strong>Reprasantator Mail</strong>: {{viewController.item.ReprasantatorMail}} </li>
             <br>
-            <ng-include src="'app/machine/view_damage.html'"></ng-include>
-            <ng-include src="'app/machine/view_maintanceAft.html'"></ng-include>
-            <ng-include src="'app/machine/view_maintancePr.html'"></ng-include>
+
+            <table  datatable=""
+                dt-options="viewController.damageTable.dtOptions"
+                dt-columns="viewController.damageTable.dtColumns"
+                class="row-border hover compact">
+                <caption>Damage</caption>
+            </table>
+
+            <table  datatable=""
+                dt-options="viewController.maintanceAftTable.dtOptions"
+                dt-columns="viewController.maintanceAftTable.dtColumns"
+                class="row-border hover compact">
+                <caption>MaintanceAft</caption>
+            </table>
+
+            <table  datatable=""
+                dt-options="viewController.maintancePrTable.dtOptions"
+                dt-columns="viewController.maintancePrTable.dtColumns"
+                class="row-border hover compact">
+                <caption>MaintancePr</caption>
+            </table>
+
         </ul>
     </div>
 </div> <!-- modal body -->

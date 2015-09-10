@@ -425,8 +425,15 @@ module.exports = function (grunt) {
       options: {
         reporter: 'spec'
       },
-      src: ['server/**/*.spec.js']
+      src: [grunt.option('testFile')] //'server/**/*.spec.js'
     },
+
+    // mochaTestFile: {
+    //   options: {
+    //     reporter: 'spec'
+    //   },
+    //   src: [grunt.option('testFile')]
+    // },
 
     protractor: {
       options: {
@@ -550,6 +557,14 @@ module.exports = function (grunt) {
   grunt.registerTask('server', function () {
     grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
     grunt.task.run(['serve']);
+  });
+
+  grunt.registerTask('testfile', function() {
+    return grunt.task.run([
+        'env:all',
+        'env:test',
+        'mochaTestFile'
+      ]);
   });
 
   grunt.registerTask('test', function(target) {

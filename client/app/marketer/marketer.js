@@ -12,6 +12,40 @@
         });
     });
 
+    var viewItemController = function (createViewTable, DTColumnBuilder, item) {
+        var controller = this;
+        controller.item = item;
+        // Options for Fash materials table
+        controller.dromoglioPelatesTable = {
+            dtOptions: createViewTable({data: item.dromologioPelates}),
+            dtColumns: [
+                DTColumnBuilder.newColumn('Seira').withTitle('Seira'),
+                DTColumnBuilder.newColumn('IDDromologio.Dromologio').withTitle('Dromoglio'),
+            ]
+        };
+
+        controller.salesDateTable = {
+            dtOptions: createViewTable({data: item.salesDates}),
+            dtColumns: [
+                DTColumnBuilder.newColumn('SalesDate').withTitle('SalesDate'),
+                DTColumnBuilder.newColumn('SalesPrint').withTitle('Print')
+            ]
+        };
+
+        controller.sortSupliersTable = {
+            dtOptions: createViewTable({data: item.sortSupliers}),
+            dtColumns: [
+                DTColumnBuilder.newColumn('IDSort.SortDescr').withTitle('Sort'),
+                DTColumnBuilder.newColumn('Basic').withTitle('Basic'),
+                DTColumnBuilder.newColumn('Date').withTitle('Date'),
+                DTColumnBuilder.newColumn('Price').withTitle('Price')
+            ]
+        };
+        
+    };
+    
+    viewItemController.$inject = ['createViewTable', 'DTColumnBuilder', 'item'];
+    
     Marketer.controller('MarketerController',
         function ($scope, createTable, DTColumnBuilder, entityService) {
 
@@ -20,7 +54,8 @@
 
         controller.dtOptions = createTable({
             service: service,
-            viewTemplateUrl: 'app/marketer/view.html'
+            viewTemplateUrl: 'app/marketer/view.html',
+            viewController: viewItemController
         });
 
         controller.dtColumns = [
