@@ -1,12 +1,12 @@
 'use strict';
 
 var AFash = require('./aFash.model');
-var IDCategory = require('../sort/sortCategory.model');
-var IDSortSubCategory = require('../sort/sortSubCategory.model');
-var MesurmentUnit = require('../mesurment/mesurment.model');
-var IDOperation = require('../plant/plantPartsSectionsOperations.model');
+// var IDCategory = require('../sort/sortCategory.model');
+// var IDSortSubCategory = require('../sort/sortSubCategory.model');
+// var MesurmentUnit = require('../mesurment/mesurment.model');
+// var IDOperation = require('../plant/plantPartsSectionsOperations.model');
 var AFashMaterials = require('./aFashMaterials.model');
-var IDSort = require('../sort/sort.model');
+// var IDSort = require('../sort/sort.model');
 var operations = {};
 
 operations.getAll = function () {

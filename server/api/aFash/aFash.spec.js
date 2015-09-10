@@ -5,7 +5,7 @@ var app = require('../../app');
 var request = require('supertest');
 
 describe('GET /api/aFash', function() {
-
+  this.timeout(10000);
   it('should respond with JSON array of aFashes, populated', function(done) {
     request(app)
       .get('/api/aFash')

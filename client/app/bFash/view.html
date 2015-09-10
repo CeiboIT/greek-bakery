@@ -35,9 +35,12 @@
             <li><strong>YesNo1</strong>: {{viewController.item.YesNo1}} </li>
             <li><strong>YesNo2</strong>: {{viewController.item.YesNo2}} </li>
 -->
-
             <br>
-            <ng-include src="'app/bFash/view_materials.html'"></ng-include>
+            <table  datatable=""
+                    dt-options="viewController.materialsTable.dtOptions"
+                    dt-columns="viewController.materialsTable.dtColumns"
+                    class="row-border hover compact">
+            </table>
         </ul>
     </div>
 </div> <!-- modal body -->
